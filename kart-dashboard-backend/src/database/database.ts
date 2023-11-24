@@ -1,6 +1,7 @@
-import Logger from "./logger.ts";
+import Logger from "./logger.js";
 import mysql from "mysql";
 import express from "express";
+import 'dotenv/config'
 
 const app = express();
 
@@ -49,36 +50,45 @@ class DataBase {
         if (sqlusername !== undefined) {
             this.sqlname = sqlusername;
         }
+        this.logger.Info("constructor called");
     }
 
     // Connect to the database
     public connectDB() {
-        const db = mysql.createConnection({
-            host: this.hostname,
-            user: this.sqlname,
-            password: this.sqlpass,
-            database: this.dbname
+        try {
+            this.logger.Info(`Attempting to connect to ${this.dbname}`)
+            const db = mysql.createConnection({
+                host: this.hostname,
+                user: this.sqlname,
+                password: this.sqlpass,
+                database: this.dbname
+            });
+            // Put the connection in the properties
+            this.db = db;
+            this.logger.Info(`Connected to ${this.dbname}`);
+        } catch (error) {
+            this.logger.Error(error);
+        }
+    }
+
+    public getAllData(): Promise<object[]> {
+        return new Promise((resolve, reject) => {
+            this.db.query("SELECT * FROM sensor_data", (error, results) => {
+                if (error) {
+                    this.logger.Error(`${error}`);
+                    reject(error);
+                } else {
+                    this.logger.Info("Getting all data from database");
+                    resolve(results);
+                }
+            });
         });
-        // Put the connection in the properties
-        this.db = db;
     }
 
     // Get the database name
     public DBname() {
         this.logger.Info("Returning database name");
         return this.dbname;
-    }
-
-
-
-    // Create database
-    public CreateDatabase() {
-        try {
-
-        }
-        catch (Error) {
-            this.logger.Error(`Database creation has gone wrong: ${Error}`);
-        }
     }
 }
 
