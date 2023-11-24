@@ -15,7 +15,7 @@ Niek
 ## Setup database
 
 1. Install MySQL or MariaDB
-2. inport in kart.sql in the kart-dashboard-backend
+2. import in kart-dashboard-backend/kart.sql into SQL
 3. Check if the info in kart-dashboard-backend/.env is correct
 
 ## How to run
