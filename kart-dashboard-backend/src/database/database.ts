@@ -21,10 +21,10 @@ class DataBase {
 
     // Start logger en put database name into variable
     constructor() {
-        const dbname = process.env.REACT_APP_DATABASE_NAME;
-        const sqlusername = process.env.REACT_APP_SQL_USERNAME;
-        const sqlpass = process.env.REACT_APP_SQL_PASSWORD;
-        const hostname = process.env.REACT_APP_SQL_HOSTNAME;
+        const dbname = process.env.DATABASE_NAME;
+        const sqlusername = process.env.SQL_USERNAME;
+        const sqlpass = process.env.SQL_PASSWORD;
+        const hostname = process.env.SQL_HOSTNAME;
 
         // Create new logger
         this.logger = new Logger("DataBase");
