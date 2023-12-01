@@ -1,9 +1,6 @@
 import Logger from "./logger.js";
 import mysql from "mysql";
-import express from "express";
 import 'dotenv/config'
-
-const app = express();
 
 class DataBase {
     // Logger to log any errors
