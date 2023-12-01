@@ -51,6 +51,7 @@ function App() {
             <li>gps_long: {element.gps_long}</li>
             <li>gyro_x: {element.gyro_x}</li>
             <li>gyro_y: {element.gyro_y}</li>
+            <li>gyro_z: {element.gyro_z}</li>
           </div>
         ))}
       </ul>
