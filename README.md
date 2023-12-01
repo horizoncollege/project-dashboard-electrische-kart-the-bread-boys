@@ -17,6 +17,8 @@ Niek
 1. Install MySQL or MariaDB
 2. import in kart-dashboard-backend/kart.sql into SQL
 3. Check if the info in kart-dashboard-backend/.env is correct
+4. run ```npm start``` to run the API for all the data
+5. Then run the client
 
 ## How to run
 
@@ -25,3 +27,5 @@ Niek
 3. Check with ```npm --version``` if nodejs is installed. If not please download the LTS version [at nodejs](https://nodejs.org/en)
 4. Run ```npm install``` to install all the dependencies
 5. Run ```npm start``` to run the dashboard
+
+## Use the api

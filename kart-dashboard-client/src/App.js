@@ -1,22 +1,33 @@
 import React from 'react';
 import './App.css';
 import BackendConnection from './backend/Backendconnection.ts';
+import Logger from './backend/logger.ts';
 
+// Create a new logger for app
+const log = new Logger("App");
+
+log.Info("Front-end started");
+
+// Connect to the database
 const bc = new BackendConnection();
 
+
+// Fetch all data
 async function fetchData() {
   try {
     const receivedData = await bc.GetAllData();
     return receivedData;
   } catch (error) {
-    console.error('Error fetching data:', error);
+    log.error('Error fetching data:', error);
     return [];
   }
 }
 
 function App() {
+  // Use state so it can update live
   const [data, setData] = React.useState([]);
 
+  // Wait for an update and then fetch the data
   React.useEffect(() => {
     fetchData().then((receivedData) => {
       setData(receivedData);

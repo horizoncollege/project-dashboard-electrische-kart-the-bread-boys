@@ -41,7 +41,7 @@ class Logger {
 
     // Log message with classname, message and level
     public Log(message: string, level: string) {
-        console.log(`[${this.logWithTime()} - ${this.classname} - ${level}]: ${message}`);
+        console.log(`[${this.logWithTime()} - ${this.classname} - ${level}]: ${message}\n`);
     }
 }
 
