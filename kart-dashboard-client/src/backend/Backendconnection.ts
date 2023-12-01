@@ -5,7 +5,7 @@ export default class BackendConnection {
     private port: number;
     private log: Logger;
 
-    constructor(props) {
+    constructor() {
 
         const logger = new Logger("BackendConnection");
         this.log = logger;
