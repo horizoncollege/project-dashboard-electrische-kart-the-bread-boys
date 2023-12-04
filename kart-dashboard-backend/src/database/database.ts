@@ -70,6 +70,7 @@ class DataBase {
 
     public getAllData(): Promise<object[]> {
         return new Promise((resolve, reject) => {
+            this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
             this.db.query("SELECT * FROM sensor_data", (error, results) => {
                 if (error) {
                     this.logger.Error(`${error}`);
