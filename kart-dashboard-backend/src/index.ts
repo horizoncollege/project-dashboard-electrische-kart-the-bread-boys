@@ -43,5 +43,4 @@ app.get("/ALL", cors(corsOptions), async (req, res) => {
 });
 
 
-log.Info("Listening");
-
+log.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);

@@ -1,0 +1,18 @@
+{
+  "name": "project-dashboard-electrische-kart-the-bread-boys",
+  "version": "1.0.0",
+  "description": "Emiel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run start-back-end\" \"npm run start-front-end\"",
+    "start-back-end": "npm start --prefix ./kart-dashboard-backend",
+    "start-front-end": "npm start --prefix ./kart-dashboard-client",
+    "setup-dashboard": "\"npm install\" && npm install --prefix ./kart-dashboard-backend && npm install --prefix ./kart-dashboard-client"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
