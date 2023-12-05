@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import BackendConnection from './backend/Backendconnection.ts';
 import Logger from './backend/logger.ts';
+import { Line } from "react-chartjs-2";
+import 'chart.js/auto'; // Import 'chart.js/auto' to include all components
+
 
 // Create a new logger for app
 const log = new Logger("App");
@@ -10,7 +13,6 @@ log.Info("Front-end started");
 
 // Connect to the database
 const bc = new BackendConnection();
-
 
 // Fetch all data
 async function fetchData() {
@@ -34,27 +36,96 @@ function App() {
     });
   }, []);
 
+  // Extract voltage data for chart
+  const voltageData = data.map((element) => element.voltage);
+  const time = data.map((element) => element.date);
+  const timeInHoursMinutesSeconds = data.map((element) => {
+    const unixTimestampInSeconds = parseInt(element.time);
+    const date = new Date(unixTimestampInSeconds * 1000); // Convert seconds to milliseconds
+    const hours = date.getUTCHours();
+    const minutes = date.getUTCMinutes();
+    const seconds = date.getUTCSeconds();
+    
+    // Format the hours, minutes, and seconds as a string (e.g., "hh:mm:ss")
+    const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+    return formattedTime;
+  });
+  
+
+  // Calculate average voltage
+
+  let average = 0;
+
+  for (let index = 0; index < data.length; index++) {
+    average += parseInt(data[index].voltage);
+  }
+
+  average = average / data.length;
+
+
+  // Chart data for voltage
+  const chartData = {
+    labels: data.map((element, index) => `${time[index]} ${timeInHoursMinutesSeconds[index]}`),
+    datasets: [
+      {
+        label: 'Voltage',
+        data: voltageData,
+        backgroundColor: "#FFFFFF",
+        borderColor: "#000000",
+      },
+    ],
+  };
+
+  // Chart options
+  const chartOptions = {
+    scales: {
+      x: [
+        {
+          type: 'time', // Use 'time' scale for the x-axis
+          position: 'bottom',
+          time: {
+            unit: 'second',
+          },
+          title: {
+            display: true,
+            text: 'Time',
+          },
+        },
+      ],
+      y: [
+        {
+          title: {
+            display: true,
+            text: 'Voltage',
+          },
+        },
+      ],
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            const label = context.dataset.label || '';
+            if (label) {
+              return `${label}: ${context.parsed.y}`;
+            }
+            return `${context.parsed.y}`;
+          },
+        },
+      },
+    },
+  };
+
   return (
     <div className="App">
-      <h1>Ello👋 :) </h1>
-      <ul>
-        {data.map((element, index) => (
-          <div key={`data_${index}`}>
-            <li>id: {element.data_ID}</li>
-            <li>date: {element.date}</li>
-            <li>time unix: {element.time}</li>
-            <li>acceleration_x: {element.acc_x}</li>
-            <li>acceleration_y: {element.acc_y}</li>
-            <li>acceleration_z: {element.acc_z}</li>
-            <li>voltage: {element.voltage}</li>
-            <li>gps_lat: {element.gps_lat}</li>
-            <li>gps_long: {element.gps_long}</li>
-            <li>gyro_x: {element.gyro_x}</li>
-            <li>gyro_y: {element.gyro_y}</li>
-            <li>gyro_z: {element.gyro_z}</li>
-          </div>
-        ))}
-      </ul>
+      <h1 className='title'>Kart dashboard</h1>
+      <p></p>
+      <div className="chart-container">
+        <h2>Voltage</h2>
+        <Line data={chartData} options={chartOptions} />
+        <p>Average: {average.toFixed(2)}V</p>
+      </div>
     </div>
   );
 }
