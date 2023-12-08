@@ -77,11 +77,15 @@ class DataBase {
                     reject(error);
                 } else {
                     this.logger.Info("Getting all data from database");
+                    for (let i = 0; i < results.length; i++) {
+                        results[i].voltage = this.getRandomNumber(0, 30);
+                    }
                     resolve(results);
                 }
             });
         });
     }
+
     public getVoltage(): Promise<object[]> {
         return new Promise((resolve, reject) => {
             this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
@@ -95,6 +99,10 @@ class DataBase {
                 }
             });
         });
+    }
+
+    getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
     }
 
     // Get the database name

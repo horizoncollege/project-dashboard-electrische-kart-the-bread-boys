@@ -5,7 +5,6 @@ import Logger from './backend/logger.ts';
 import { Line } from "react-chartjs-2";
 import 'chart.js/auto'; // Import 'chart.js/auto' to include all components
 
-
 // Create a new logger for app
 const log = new Logger("App");
 
@@ -45,13 +44,13 @@ function App() {
     const hours = date.getUTCHours();
     const minutes = date.getUTCMinutes();
     const seconds = date.getUTCSeconds();
-    
+
     // Format the hours, minutes, and seconds as a string (e.g., "hh:mm:ss")
     const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    
+
     return formattedTime;
   });
-  
+
 
   // Calculate average voltage
 
@@ -129,5 +128,10 @@ function App() {
     </div>
   );
 }
+
+setTimeout(() => {
+  window.location.reload();
+}, 10000); // Wait 1 second before executing code
+
 
 export default App;
