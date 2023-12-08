@@ -51,6 +51,33 @@ app.get("/voltage", cors(corsOptions), async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+app.get("/acceleration", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getAcceleration();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+app.get("/gps", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getGPS();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+app.get("/gyro", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getGyroscope();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 
 log.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
