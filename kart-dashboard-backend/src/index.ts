@@ -42,5 +42,15 @@ app.get("/ALL", cors(corsOptions), async (req, res) => {
     }
 });
 
+app.get("/voltage", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getVoltage();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 
 log.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);

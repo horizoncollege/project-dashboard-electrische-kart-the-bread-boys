@@ -82,6 +82,20 @@ class DataBase {
             });
         });
     }
+    public getVoltage(): Promise<object[]> {
+        return new Promise((resolve, reject) => {
+            this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
+            this.db.query("SELECT voltage FROM sensor_data", (error, results) => {
+                if (error) {
+                    this.logger.Error(`${error}`);
+                    reject(error);
+                } else {
+                    this.logger.Info("Getting all data from database");
+                    resolve(results);
+                }
+            });
+        });
+    }
 
     // Get the database name
     public DBname() {
