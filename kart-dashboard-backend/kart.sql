@@ -30,6 +30,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `sensor_data`
 --
 
+CREATE INDEX idx_data_ID ON `sensor_data` (`data_ID`);
+
 CREATE TABLE sensor_data (
   `data_ID` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
