@@ -15,29 +15,15 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `kart`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sensor_data`
---
-
-CREATE INDEX idx_data_ID ON `sensor_data` (`data_ID`);
 
 CREATE TABLE sensor_data (
   `data_ID` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
-  `time` int(11) NOT NULL
+  `time` int(11) NOT NULL,
+ PRIMARY KEY (`data_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE INDEX idx_data_ID ON `sensor_data` (`data_ID`);
 
 CREATE TABLE gps_data(
   `data_ID` int(11) NOT NULL,
@@ -218,26 +204,3 @@ VALUES
 ALTER TABLE `gps_data`
   ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
 
--- Indexes for dumped tables
---
-
---
--- Indexes for table `sensor_data`
---
-ALTER TABLE `sensor_data`
-  ADD PRIMARY KEY (`data_ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `sensor_data`
---
-ALTER TABLE `sensor_data`
-  MODIFY `data_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
