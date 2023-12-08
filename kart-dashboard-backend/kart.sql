@@ -30,14 +30,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `sensor_data`
 --
 
-CREATE TABLE `sensor_data` (
+CREATE TABLE sensor_data (
   `data_ID` int(11) NOT NULL,
   `date` varchar(255) NOT NULL,
   `time` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-CREATE TABLE `gps_data` (
+CREATE TABLE gps_data(
   `data_ID` int(11) NOT NULL,
   `gps_lat` varchar(255) NOT NULL,
   `gps_long` varchar(255) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `gps_data` (
 );
 
 
-CREATE TABLE `acceleration_data` (
+CREATE TABLE acceleration_data (
   `data_ID` int(11) NOT NULL,
   `acc_x` int(11) NOT NULL,
   `acc_y` varchar(255) NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE `acceleration_data` (
 );
 
 -- Table for gyroscope data
-CREATE TABLE `gyroscope_data` (
+CREATE TABLE gyroscope_data (
   `data_ID` int(11) NOT NULL,
   `gyro_x` varchar(255) NOT NULL,
   `gyro_y` varchar(255) NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE `gyroscope_data` (
 );
 
 -- Table for voltage data (assuming one voltage reading per sensor data entry)
-CREATE TABLE `voltage_data` (
+CREATE TABLE voltage_data (
   `data_ID` int(11) NOT NULL,
   `voltage` varchar(255) NOT NULL,
   PRIMARY KEY (`data_ID`),
