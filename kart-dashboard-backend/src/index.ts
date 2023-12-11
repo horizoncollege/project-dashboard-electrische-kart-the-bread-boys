@@ -42,7 +42,7 @@ app.get("/ALL", cors(corsOptions), async (req, res) => {
     }
 });
 
-app.get("/voltage", cors(corsOptions), async (req, res) => {
+app.get("/VOLTAGE", cors(corsOptions), async (req, res) => {
     try {
         const data = await db.getVoltage();
         res.json(data);
@@ -51,7 +51,7 @@ app.get("/voltage", cors(corsOptions), async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-app.get("/acceleration", cors(corsOptions), async (req, res) => {
+app.get("/ACCELERATION", cors(corsOptions), async (req, res) => {
     try {
         const data = await db.getAcceleration();
         res.json(data);
@@ -60,7 +60,7 @@ app.get("/acceleration", cors(corsOptions), async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-app.get("/gps", cors(corsOptions), async (req, res) => {
+app.get("/GPS", cors(corsOptions), async (req, res) => {
     try {
         const data = await db.getGPS();
         res.json(data);
@@ -69,7 +69,7 @@ app.get("/gps", cors(corsOptions), async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-app.get("/gyro", cors(corsOptions), async (req, res) => {
+app.get("/GYRO", cors(corsOptions), async (req, res) => {
     try {
         const data = await db.getGyroscope();
         res.json(data);
