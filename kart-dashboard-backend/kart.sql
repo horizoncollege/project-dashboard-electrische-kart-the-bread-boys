@@ -6,6 +6,9 @@
 -- Generation Time: Nov 02, 2023 at 09:36 AM
 -- Server version: 10.5.21-MariaDB-0+deb11u1
 -- PHP Version: 7.4.33
+
+
+
 CREATE DATABASE kart;
 
 USE kart;
@@ -13,6 +16,7 @@ USE kart;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 
 
