@@ -36,7 +36,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Ello👋 :) </h1>
+      <nav>
+        <div className='titlebreb'>
+          <h1>Kart dashboard</h1>
+        </div>
+        <div className='logobreb'>
+          <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
+        </div>
+      </nav>
+      {/* <h1>Ello👋 :) </h1>
       <ul>
         {data.map((element, index) => (
           <div key={`data_${index}`}>
@@ -54,7 +62,7 @@ function App() {
             <li>gyro_z: {element.gyro_z}</li>
           </div>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
