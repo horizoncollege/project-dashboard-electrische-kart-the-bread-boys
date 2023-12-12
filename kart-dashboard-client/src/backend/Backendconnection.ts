@@ -50,4 +50,44 @@ export default class BackendConnection {
         // Return the result
         return data;
     }
+    // Get voltage data from api
+    async GetVolTage() {
+        this.log.Info("Collecting all data from api");
+        // Format url
+        const response = await fetch(`http://${this.hostname}:${this.port}/VOLTAGE`);
+        // Convert it to json
+        const data = await response.json();
+        // Return the result
+        return data;
+    }
+    // Get acceleration data from api
+    async GetAcceleration() {
+        this.log.Info("Collecting all data from api");
+        // Format url
+        const response = await fetch(`http://${this.hostname}:${this.port}/ACCELERATION`);
+        // Convert it to json
+        const data = await response.json();
+        // Return the result
+        return data;
+    }
+    // Get gps data from api
+    async GetGps() {
+        this.log.Info("Collecting all data from api");
+        // Format url
+        const response = await fetch(`http://${this.hostname}:${this.port}/GPS`);
+        // Convert it to json
+        const data = await response.json();
+        // Return the result
+        return data;
+    }
+    // Get gyroscope data from api
+    async GetGyroscope() {
+        this.log.Info("Collecting all data from api");
+        // Format url
+        const response = await fetch(`http://${this.hostname}:${this.port}/GYRO`);
+        // Convert it to json
+        const data = await response.json();
+        // Return the result
+        return data;
+    }
 }
