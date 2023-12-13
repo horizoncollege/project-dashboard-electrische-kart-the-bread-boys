@@ -71,9 +71,9 @@ footer {
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;
-  margin-top: 1.1vw;
-  margin-left: 1.1vw;
-  margin-bottom: 1.2vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 6%;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
