@@ -36,3 +36,51 @@ Niek
 5. Run ```npm run start-front-end``` to run the front-end
 
 ## Use the api
+
+This is the documentation for the current API
+
+#### Change the port
+
+To change the port of the API you need to open the ```.env``` file and change the ```REACT_APP_BACKEND_PORT``` in the client and ```HOST_PORT``` must be the same in the back-end
+
+#### Urls
+The url will look something like this and the following examples will contain the ending
+
+```http://example:port```
+
+The currently defined the follow urls:
+
+
+```http://example:port```: It's the root and will send the message: ```Hello, this is backend!```
+
+```http://example:port/ALL```: Will show all the data in the database
+
+```http://example:port/VOLTAGE```: It will show all the voltages
+
+```http://example:port/ACCELERATION```: It will show all the acceleration data
+
+```http://example:port/GPS```: It will show all the gps latitude and longitude
+
+```http://example:port/GYRO```: It will show all the gyro data
+
+
+#### Functions
+
+For the client there are multiple useful functions to fetch all the data in ```Backendconnection.ts```
+
+```ts
+GetAllData() // It will fetch all the data and parse it into a json object
+```
+
+```ts
+GetVolTage() // It will fetch all the voltages and parse it into a json object
+```
+```ts
+GetAcceleration() // It will fetch all the acceleleration data and parse it into a json object
+```
+```ts
+GetGps() // It will fetch all the gps latitude and longitude data and parse it into a json object
+```
+```ts
+GetGyroscope() // It will fetch all rotations and parse it into a json object
+```
