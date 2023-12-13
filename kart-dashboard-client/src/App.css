@@ -30,6 +30,7 @@ nav {
   width: 37%;
   margin-right: 35%;
   margin-left: 40%;
+  font-size: 2vw;
 }
 
 .titlebreb, h1{
@@ -45,12 +46,14 @@ nav {
   width: 35%;
 }
 
+/* main */
 .content-container {
   min-height: calc(100vh - 10vw);
   display: flex;
   flex-direction: column;
 }
 
+/* footer */
 footer {
   position: fixed;
   left: 0;
@@ -68,6 +71,7 @@ footer {
   filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
 }
 
+/* sidebar */
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;
