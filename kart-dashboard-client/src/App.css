@@ -5,18 +5,73 @@
 }
 
 body {
-  background-color: rgba(0, 26, 66, 1);
+  background-color: #001A42;
 }
 
 .App {
   color: white;
 }
 
+/* header */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #223E68;
+  padding: 1.5%;
+  filter: drop-shadow(0.1vw 0.1vw 0vw black);
+}
+
+.titlebreb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 37%;
+  margin-right: 35%;
+  margin-left: 40%;
+}
+
+.titlebreb, h1{
+  font-size: xx-large;
+}
+
+.logobreb {
+  display: flex;
+  justify-content: center;
+}
+
+.breblogoc {
+  width: 35%;
+}
+
+.content-container {
+  min-height: calc(100vh - 10vw);
+}
+
+footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+/* footer */
+.footerinhoud{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+background-color: #223E68;
+padding: 1%;
+filter: drop-shadow(0.1vw 0.1vw 0vw black);
+}
+
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;
-  margin-top: 1%;
-  margin-left: 1%;
+  margin-top: 1.1vw;
+  margin-left: 1.1vw;
+  margin-bottom: 1.2vw;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.3vw 0.3vw 0vw black);
