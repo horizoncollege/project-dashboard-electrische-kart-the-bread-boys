@@ -45,17 +45,11 @@ function App() {
         </div>
       </nav>
       <div className='content-container'>
-        <main>
-        </main>
-      </div>
-      <footer>
-        <div className='footerinhoud'>
-          <p className='footert'>The Bread Boy’s</p>
-          <p className='link'>TheBreadboys.com😁</p>
-        </div>
-      </footer>
+        
+       
       {/* <h1>Ello👋 :) </h1>
       <ul>
+      {/* <ul>
         {data.map((element, index) => (
           <div key={`data_${index}`}>
             <li>id: {element.data_ID}</li>
@@ -73,6 +67,56 @@ function App() {
           </div>
         ))}
       </ul> */}
+
+      <div className='sidebar'>
+        <h2>Add a graph :)</h2>
+
+        <form>
+          <p>Voltage meter</p>
+          <p>Voltage usage</p>
+          <p>Km/h</p>
+          <p>Gyro</p>
+          <p>Gps</p>
+          <p>Whether</p>
+        </form>
+
+        <form>
+          <select id="date" name="date">
+            <option value="D-12-12-2023">Date: 12-12-2023</option>
+            <option value="D-13-12-2023">Date: 13-12-2023</option>
+            <option value="D-14-12-2023">Date: 14-12-2023</option>
+            <option value="D-15-12-2023">Date: 15-12-2023</option>
+          </select>
+        </form>
+
+        <form>
+          <select id="start-time" name="start-time">
+            <option value="S-00:00">Start: 00:00</option>
+            <option value="S-00:01">Start: 00:01</option>
+            <option value="S-00:02">Start: 00:02</option>
+            <option value="S-00:03">Start: 00:03</option>
+          </select>
+        </form>
+
+        <form>
+          <select id="end-time" name="end-time">
+            <option value="E-00:00">End: 00:00</option>
+            <option value="E-00:01">End: 00:01</option>
+            <option value="E-00:02">End: 00:02</option>
+            <option value="E-00:03">End: 00:03</option>
+          </select>
+        </form>
+
+        <button id='add'>Add</button>
+
+        <button id='delete-all'>Delete all</button>
+      </div>
+      <footer>
+        <div className='footerinhoud'>
+          <p className='footert'>The Bread Boy’s</p>
+          <p className='link'>TheBreadboys.com😁</p>
+        </div>
+      </footer>
     </div>
   );
 }

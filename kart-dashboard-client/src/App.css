@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -60,9 +61,66 @@ filter: drop-shadow(0.1vw 0.1vw 0vw black);
 }
 
 .footert{
-  
+  background-color: rgba(0, 26, 66, 1);
 }
+
 
 .App {
   color: white;
+}
+
+.sidebar {
+  background-color: rgba(34, 62, 104, 1);
+  width: 15vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.3vw 0.3vw 0vw black);
+}
+
+.sidebar h2 {
+  font-size: 1.5vw;
+  margin-bottom: 18%;
+}
+
+.sidebar p {
+  font-size: 1vw;
+  margin-top: 2%;
+}
+
+#date {
+  margin-top: 7%;
+}
+
+select {
+  font-size: 1vw;
+  width: 13vw;
+  height: 2.5vw;
+  border-radius: 0.5vw;
+  background-color: rgba(65, 93, 135, 1);
+  color: #ffffff;
+  margin-top: 7%;
+  filter: drop-shadow(0.1vw 0.1vw 0vw black);
+}
+
+#add {
+  font-size: 1vw;
+  width: 13vw;
+  height: 2.5vw;
+  border-radius: 0.5vw;
+  background-color: rgba(65, 93, 135, 1);
+  color: #ffffff;
+  margin-top: 7%;
+
+}
+
+#delete-all {
+  font-size: 1vw;
+  width: 13vw;
+  height: 2.5vw;
+  border-radius: 0.5vw;
+  background-color: rgba(218, 77, 77, 1);
+  color: #ffffff;
+  margin-top: 100%;
 }
