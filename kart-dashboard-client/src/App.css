@@ -7,6 +7,11 @@
 body {
   background-color: #001A42;
 }
+
+.App {
+  color: white;
+}
+
 /* header */
 nav {
   display: flex;
@@ -49,6 +54,7 @@ footer{
   left: 0;
   bottom: 0;
 }
+
 /* footer */
 .footerinhoud{
 display: flex;
@@ -60,20 +66,12 @@ padding: 1%;
 filter: drop-shadow(0.1vw 0.1vw 0vw black);
 }
 
-.footert{
-  background-color: rgba(0, 26, 66, 1);
-}
-
-
-.App {
-  color: white;
-}
-
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;
-  margin-top: 1%;
-  margin-left: 1%;
+  margin-top: 1.1vw;
+  margin-left: 1.1vw;
+  margin-bottom: 1.2vw;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.3vw 0.3vw 0vw black);
