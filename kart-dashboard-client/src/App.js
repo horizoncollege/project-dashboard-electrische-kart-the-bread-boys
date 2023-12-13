@@ -36,6 +36,19 @@ function App() {
 
   return (
     <div className="App">
+      <nav>
+        <div className='titlebreb'>
+          <h1>Kart dashboard</h1>
+        </div>
+        <div className='logobreb'>
+          <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
+        </div>
+      </nav>
+      <div className='content-container'>
+        
+       
+      {/* <h1>Ello👋 :) </h1>
+      <ul>
       {/* <ul>
         {data.map((element, index) => (
           <div key={`data_${index}`}>
@@ -98,7 +111,12 @@ function App() {
 
         <button id='delete-all'>Delete all</button>
       </div>
-
+      <footer>
+        <div className='footerinhoud'>
+          <p className='footert'>The Bread Boy’s</p>
+          <p className='link'>TheBreadboys.com😁</p>
+        </div>
+      </footer>
     </div>
   );
 }
