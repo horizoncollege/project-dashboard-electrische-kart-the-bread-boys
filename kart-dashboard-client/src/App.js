@@ -44,6 +44,16 @@ function App() {
           <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
         </div>
       </nav>
+      <div className='content-container'>
+        <main>
+        </main>
+      </div>
+      <footer>
+        <div className='footerinhoud'>
+          <p className='footert'>The Bread Boy’s</p>
+          <p className='link'>TheBreadboys.com😁</p>
+        </div>
+      </footer>
       {/* <h1>Ello👋 :) </h1>
       <ul>
         {data.map((element, index) => (
