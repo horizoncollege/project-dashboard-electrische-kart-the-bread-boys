@@ -8,6 +8,10 @@ body {
   background-color: #001A42;
 }
 
+.App {
+  color: white;
+}
+
 /* header */
 nav {
   display: flex;
@@ -60,10 +64,6 @@ justify-content: space-between;
 background-color: #223E68;
 padding: 1%;
 filter: drop-shadow(0.1vw 0.1vw 0vw black);
-}
-
-.App {
-  color: white;
 }
 
 .sidebar {
