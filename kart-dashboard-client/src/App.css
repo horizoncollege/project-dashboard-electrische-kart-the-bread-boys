@@ -30,7 +30,6 @@ nav {
   width: 37%;
   margin-right: 35%;
   margin-left: 40%;
-  font-size: 2vw;
 }
 
 .titlebreb, h1{
@@ -43,19 +42,17 @@ nav {
 }
 
 .breblogoc {
-  width: 35%;
+  width: 3%;
 }
 
-/* main */
 .content-container {
   min-height: calc(100vh - 10vw);
   display: flex;
   flex-direction: column;
 }
 
-/* footer */
 footer {
-  position: fixed;
+  position: static;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -71,7 +68,6 @@ footer {
   filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
 }
 
-/* sidebar */
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;

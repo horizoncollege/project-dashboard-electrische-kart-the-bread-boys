@@ -40,9 +40,9 @@ function App() {
         <div className='titlebreb'>
           <h1>Kart dashboard</h1>
         </div>
-        <div className='logobreb'>
+        {/* <div className='logobreb'> */}
           <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
-        </div>
+        {/* </div> */}
       </nav>
 
 
