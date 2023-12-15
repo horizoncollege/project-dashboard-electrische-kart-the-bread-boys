@@ -30,11 +30,12 @@ nav {
   width: 37%;
   margin-right: 35%;
   margin-left: 40%;
+  font-size: 1vw;
 }
 
-.titlebreb, h1{
+/* .titlebreb, h1{
   font-size: xx-large;
-}
+} */
 
 .logobreb {
   display: flex;
@@ -42,7 +43,7 @@ nav {
 }
 
 .breblogoc {
-  width: 35%;
+  width: 3%;
 }
 
 .content-container {
@@ -52,10 +53,11 @@ nav {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
+  font-size: 1vw;
 }
 
 .footerinhoud {
@@ -68,12 +70,13 @@ footer {
   filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
 }
 
+/* sidebar  */
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;
   margin-top: 1%;
   margin-left: 1%;
-  margin-bottom: 6%;
+  margin-bottom: 1.5%;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
@@ -124,3 +127,4 @@ select {
   color: #ffffff;
   margin-top: 100%;
 }
+

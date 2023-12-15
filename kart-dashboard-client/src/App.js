@@ -40,9 +40,9 @@ function App() {
         <div className='titlebreb'>
           <h1>Kart dashboard</h1>
         </div>
-        <div className='logobreb'>
+        {/* <div className='logobreb'> */}
           <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
-        </div>
+        {/* </div> */}
       </nav>
 
 
@@ -67,6 +67,7 @@ function App() {
           </div>
         ))}
       </ul> */}
+
       <div className='content-container'>
         <div className='sidebar'>
           <h2>Add a graph :)</h2>
@@ -114,8 +115,9 @@ function App() {
 
         <footer>
           <div className='footerinhoud'>
-            <p className='footert'>The Bread Boy’s</p>
-            <p className='link'>TheBreadboys.com😁</p>
+            {/* class footert */}
+            <p>The Bread Boy’s</p>
+            <p>TheBreadboys.com😁</p>
           </div>
         </footer>
       </div>
