@@ -1,12 +1,17 @@
+mod components;
 use influxdb::{Client, Query, Timestamp, ReadQuery};
 use influxdb::InfluxDbWriteable;
 use chrono::{DateTime, Utc};
+use components::logger::Logger;
 
 #[tokio::main]
 // or #[async_std::main] if you prefer
 async fn main() {
     // Connect to db `test` on `http://localhost:8086`
-    let client = Client::new("http://localhost:8086", "test");
+    let client: Client = Client::new("http://localhost:8086", "test");
+    let log: Logger = Logger::new("main");
+
+    log.info("Hoi");
 
     #[derive(InfluxDbWriteable)]
     struct WeatherReading {
