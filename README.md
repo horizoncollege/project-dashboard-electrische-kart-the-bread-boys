@@ -39,7 +39,7 @@ Niek
 ## Downloading ChartJS
 
 1. cd into project-dashboard-electrische-kart-the-bread-boys/kart-dashboard-client
-2. Run nom add chart.js react-chartjs-2
+2. Run ```npm add chart.js react-chartjs-2```
 3. go back to root (cd ..)
 4. run ```npm run start```
 
