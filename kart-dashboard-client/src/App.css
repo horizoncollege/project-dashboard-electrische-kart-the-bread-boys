@@ -57,6 +57,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  font-size: 1vw;
 }
 
 .footerinhoud {
@@ -69,12 +70,13 @@ footer {
   filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
 }
 
+/* sidebar  */
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;
   margin-top: 1%;
   margin-left: 1%;
-  margin-bottom: 2%;
+  margin-bottom: 1.5%;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
@@ -125,3 +127,4 @@ select {
   color: #ffffff;
   margin-top: 100%;
 }
+
