@@ -1,10 +1,9 @@
 import React from 'react'
+import { bar } from 'chart.js'
 
 function BarChart() {
   return (
-    <div>
-      
-    </div>
+    <bar data={} options={}/>
   )
 }
 
