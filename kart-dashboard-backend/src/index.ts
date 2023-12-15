@@ -60,6 +60,7 @@ app.get("/ACCELERATION", cors(corsOptions), async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
 app.get("/GPS", cors(corsOptions), async (req, res) => {
     try {
         const data = await db.getGPS();
@@ -69,6 +70,17 @@ app.get("/GPS", cors(corsOptions), async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
+
+app.get("/SPEED", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getSpeed();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 app.get("/GYRO", cors(corsOptions), async (req, res) => {
     try {
         const data = await db.getGyroscope();
