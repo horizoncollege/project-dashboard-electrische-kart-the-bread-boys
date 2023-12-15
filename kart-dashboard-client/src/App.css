@@ -12,6 +12,12 @@ body {
   color: white;
 }
 
+.content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 /* header */
 nav {
   display: flex;
@@ -20,7 +26,7 @@ nav {
   align-items: center;
   background-color: #223E68;
   padding: 1.5%;
-  filter: drop-shadow(0.1vw 0.1vw 0vw black);
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
 .titlebreb {
@@ -30,51 +36,27 @@ nav {
   width: 37%;
   margin-right: 35%;
   margin-left: 40%;
+  font-size: 1vw;
 }
 
-.titlebreb, h1{
+/* .titlebreb, h1{
   font-size: xx-large;
-}
-
-.logobreb {
-  display: flex;
-  justify-content: center;
-}
+} */
 
 .breblogoc {
-  width: 35%;
+  width: 3%;
 }
 
-.content-container {
-  min-height: calc(100vh - 10vw);
-}
-
-footer{
-  position: relative;
-  left: 0;
-  bottom: 0;
-}
-
-/* footer */
-.footerinhoud{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-background-color: #223E68;
-padding: 1%;
-filter: drop-shadow(0.1vw 0.1vw 0vw black);
-}
-
+/* sidebar  */
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: 15vw;
-  margin-top: 1.1vw;
-  margin-left: 1.1vw;
-  margin-bottom: 1.2vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
   padding: 1%;
   border-radius: 1vw;
-  filter: drop-shadow(0.3vw 0.3vw 0vw black);
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
 .sidebar h2 {
@@ -121,4 +103,65 @@ select {
   background-color: rgba(218, 77, 77, 1);
   color: #ffffff;
   margin-top: 100%;
+}
+
+.next-eachother {
+  display: flex;
+  flex-direction: row;
+}
+
+/* km-h */
+.km-h {
+  background-color: rgba(34, 62, 104, 1);
+  height: 22vw;
+  width: 41vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+/* gyro */
+.gyro {
+  background-color: rgba(34, 62, 104, 1);
+  height: 22vw;
+  width: 41vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+/* volt meter */
+.volt-meter {
+  background-color: rgba(34, 62, 104, 1);
+  height: 22vw;
+  width: 81vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+/* footer */
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 1vw;
+}
+
+.footerinhoud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #223e68;
+  padding: 1%;
+  filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
 }

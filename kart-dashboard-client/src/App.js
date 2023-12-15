@@ -40,9 +40,9 @@ function App() {
         <div className='titlebreb'>
           <h1>Kart dashboard</h1>
         </div>
-        <div className='logobreb'>
-          <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
-        </div>
+        {/* <div className='logobreb'> */}
+        <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
+        {/* </div> */}
       </nav>
 
 
@@ -67,6 +67,7 @@ function App() {
           </div>
         ))}
       </ul> */}
+
       <div className='content-container'>
         <div className='sidebar'>
           <h2>Add a graph :)</h2>
@@ -107,18 +108,38 @@ function App() {
             </select>
           </form>
 
-          <button id='add'>Add</button>
+          <button id='add'>Add 💾</button>
 
           <button id='delete-all'>Delete all</button>
         </div>
 
-        <footer>
-          <div className='footerinhoud'>
-            <p className='footert'>The Bread Boy’s</p>
-            <p className='link'>TheBreadboys.com😁</p>
+        <div className='blocks'>
+
+          <div className='next-eachother'>
+            <div className='km-h'>
+              <h2>truely a title</h2>
+            </div>
+
+            <div className='gyro'>
+              <h2>i like this new title, it suits me</h2>
+            </div>
           </div>
-        </footer>
+
+          <div className='volt-meter'>
+            <h2>Battery meter/Volt usage</h2>
+          </div>
+        </div>
+
       </div>
+
+      <footer>
+        <div className='footerinhoud'>
+          {/* class footert */}
+          <p>The Bread Boy’s</p>
+          <p>TheBreadboys.com😁</p>
+        </div>
+      </footer>
+
     </div>
   );
 }
