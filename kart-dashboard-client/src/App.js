@@ -108,7 +108,7 @@ function App() {
             </select>
           </form>
 
-          <button id='add'>Add</button>
+          <button id='add'>Add 💾</button>
 
           <button id='delete-all'>Delete all</button>
         </div>
@@ -126,7 +126,7 @@ function App() {
           </div>
 
           <div className='volt-meter'>
-            <h2>this be a title</h2>
+            <h2>Battery meter/Volt usage</h2>
           </div>
         </div>
 
