@@ -113,8 +113,21 @@ function App() {
           <button id='delete-all'>Delete all</button>
         </div>
 
-        <div className='volt-meter'>
-          <h2>this be a title</h2>
+        <div className='blocks'>
+
+          <div className='next-eachother'>
+            <div className='km-h'>
+              <h2>truely a title</h2>
+            </div>
+
+            <div className='gyro'>
+              <h2>i like this new title, it suits me</h2>
+            </div>
+          </div>
+
+          <div className='volt-meter'>
+            <h2>this be a title</h2>
+          </div>
         </div>
 
       </div>

@@ -15,6 +15,7 @@ body {
 .content-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 /* header */
@@ -52,7 +53,7 @@ nav {
   width: 15vw;
   margin-top: 1%;
   margin-left: 1%;
-  margin-bottom: 1.5%;
+  margin-bottom: 1%;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
@@ -104,14 +105,43 @@ select {
   margin-top: 100%;
 }
 
+.next-eachother {
+  display: flex;
+  flex-direction: row;
+}
+
+/* km-h */
+.km-h {
+  background-color: rgba(34, 62, 104, 1);
+  height: 22vw;
+  width: 41vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+/* gyro */
+.gyro {
+  background-color: rgba(34, 62, 104, 1);
+  height: 22vw;
+  width: 41vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
 /* volt meter */
 .volt-meter {
   background-color: rgba(34, 62, 104, 1);
-  height: 20vw;
-  width: 15vw;
+  height: 22vw;
+  width: 81vw;
   margin-top: 1%;
   margin-left: 1%;
-  margin-bottom: 1.5%;
+  margin-bottom: 1%;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
