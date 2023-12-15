@@ -126,11 +126,12 @@ class DataBase {
         return this.executeQuery(query);
     }
 
+    // Get speed
     public getSpeed(): Promise<object[]> {
         const query: string = `
         SELECT sensor_data.data_ID, date , time, gps_lat, gps_long from sensor_data 
         INNER JOIN gps_data on sensor_data.data_ID = gps_data.data_ID`;
-        const result = this.executeQuery(query)
+        const result = this.executeQuery(query);
         return result;
     }
 

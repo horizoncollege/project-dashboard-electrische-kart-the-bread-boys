@@ -84,3 +84,5 @@ GetGps() // It will fetch all the gps latitude and longitude data and parse it i
 ```ts
 GetGyroscope() // It will fetch all rotations and parse it into a json object
 ```
+
+### influx database
