@@ -1,5 +1,5 @@
 import React from 'react'
-import { bar } from 'chart.js'
+import { bar } from 'react-chartjs-2'
 
 function BarChart() {
   return (
