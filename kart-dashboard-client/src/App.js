@@ -41,7 +41,7 @@ function App() {
           <h1>Kart dashboard</h1>
         </div>
         {/* <div className='logobreb'> */}
-          <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
+        <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
         {/* </div> */}
       </nav>
 
@@ -113,14 +113,20 @@ function App() {
           <button id='delete-all'>Delete all</button>
         </div>
 
-        <footer>
-          <div className='footerinhoud'>
-            {/* class footert */}
-            <p>The Bread Boy’s</p>
-            <p>TheBreadboys.com😁</p>
-          </div>
-        </footer>
+        <div className='volt-meter'>
+          <h2>this be a title</h2>
+        </div>
+
       </div>
+
+      <footer>
+        <div className='footerinhoud'>
+          {/* class footert */}
+          <p>The Bread Boy’s</p>
+          <p>TheBreadboys.com😁</p>
+        </div>
+      </footer>
+
     </div>
   );
 }
