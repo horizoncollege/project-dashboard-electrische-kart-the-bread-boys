@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import BackendConnection from './backend/Backendconnection.ts';
 import Logger from './backend/logger.ts';
+import BarChart from './components/BarChart.js';
+import LineChart from './components/MultiLineChart.js';
+
 
 // Create a new logger for app
 const log = new Logger("App");
@@ -10,7 +13,8 @@ log.Info("Front-end started");
 
 // Connect to the database
 const bc = new BackendConnection();
-
+//fetches data for charts
+const UserData = await bc.GetAllData();
 
 // Fetch all data
 async function fetchData() {
@@ -26,6 +30,64 @@ async function fetchData() {
 function App() {
   // Use state so it can update live
   const [data, setData] = React.useState([]);
+  // BarChart
+  const [speedData, setUserData] = useState({
+    labels: UserData.map((data) => data.time),
+    datasets: [
+      {
+        label: "gyro_x",
+        data: UserData.map((data) => data.gyro_x),
+        backgroundColor: [
+          "rgba(0, 194, 255, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+      {
+        label: "gyro_y",
+        data: UserData.map((data) => data.gyro_y),
+        backgroundColor: [
+          "rgba(255, 184, 0, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+      {
+        label: "gyro_z",
+        data: UserData.map((data) => data.gyro_y),
+        backgroundColor: [
+          "rgba(218, 77, 77, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  });
+
+  const [voltData] = useState({
+    labels: UserData.map((data) => data.time),
+    datasets: [
+      {
+        label: "Battery",
+        data: UserData.map((data) => data.voltage),
+        backgroundColor: [
+          "rgba(0, 194, 255, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+      {
+        label: "gyro_y",
+        data: UserData.map((data) => data.gyro_x),
+        backgroundColor: [
+          "rgba(255, 184, 0, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  });
+
 
   // Wait for an update and then fetch the data
   React.useEffect(() => {
@@ -118,6 +180,9 @@ function App() {
           <div className='next-eachother'>
             <div className='km-h'>
               <h2>truely a title</h2>
+              <div className='barchartspeed'>
+                <BarChart chartData={speedData} />
+              </div>
             </div>
 
             <div className='gyro'>
@@ -127,6 +192,9 @@ function App() {
 
           <div className='volt-meter'>
             <h2>Battery meter/Volt usage</h2>
+            <div className='linechartvolt'>
+              <LineChart chartData={voltData} />
+            </div>
           </div>
         </div>
 
