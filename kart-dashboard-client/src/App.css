@@ -122,6 +122,10 @@ select {
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
+.barchartspeed {
+  width: 40vw;
+}
+
 /* gyro */
 .gyro {
   background-color: rgba(34, 62, 104, 1);
@@ -137,7 +141,7 @@ select {
 /* volt meter */
 .volt-meter {
   background-color: rgba(34, 62, 104, 1);
-  height: 22vw;
+  height: 44vw;
   width: 81vw;
   margin-top: 1%;
   margin-left: 1%;
@@ -145,6 +149,10 @@ select {
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+.linechartvolt {
+  width: 80vw;
 }
 
 /* footer */
