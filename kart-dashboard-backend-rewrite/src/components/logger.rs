@@ -4,6 +4,7 @@ pub struct Logger {
     structname: String,
 }
 
+#[allow(dead_code)]
 impl Logger {
     #[allow(dead_code)]
     // Constructor
@@ -27,7 +28,6 @@ impl Logger {
         println!("[{} {} - {}]: {}", time, self.structname, level, message)
     }
 
-    #[allow(dead_code)]
     // Warnings
     pub fn warning(&self, message: &str) {
         self.log("WARNING", message);
