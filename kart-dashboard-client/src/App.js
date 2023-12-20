@@ -31,7 +31,7 @@ function App() {
   const [data, setData] = React.useState([]);
   // BarChart
   const [speedData, setUserData] = useState({
-    labels: UserData.map((data) => data.time),
+    labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
         label: "topspeed",
@@ -63,8 +63,21 @@ function App() {
     ],
   });
 
+  function timeConverter(timestamp) {
+    var a = new Date(timestamp * 1000);
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+    return time;
+  }
+
   const [voltData] = useState({
-    labels: UserData.map((data) => data.time),
+    labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
         label: "Battery",
@@ -72,20 +85,47 @@ function App() {
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
         ],
+
+
         borderColor: "black",
         borderWidth: 2,
+        yAxisID: 'y',
+
       },
       {
-        label: "gyro_y",
-        data: UserData.map((data) => data.gyro_x),
+        label: "Voltage usage",
+        data: UserData.map((data) => 25 - data.voltage),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
         ],
         borderColor: "black",
         borderWidth: 2,
+        yAxisID: 'right', // Use 'right' instead of 'y1'
+
+      }
+    ]
+  }
+  );
+
+  const config = {
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
+        },
+        right: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
       },
-    ],
-  });
+    },
+  };
 
   // Wait for an update and then fetch the data
   React.useEffect(() => {
@@ -104,8 +144,6 @@ function App() {
         <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
         {/* </div> */}
       </nav>
-
-
 
       {/* <h1>Ello👋 :) </h1>
       <ul>
@@ -200,7 +238,7 @@ function App() {
           <div className='volt-meter'>
             <h2>Battery meter/Volt usage</h2>
             <div className='linechartvolt'>
-              <LineChart chartData={voltData} />
+              <LineChart chartData={voltData} config={config} />
             </div>
           </div>
         </div>
