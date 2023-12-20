@@ -64,6 +64,7 @@ function App() {
     ],
   });
 
+  // Linechart
   const [voltData] = useState({
     labels: UserData.map((data) => data.time),
     datasets: [
@@ -75,6 +76,8 @@ function App() {
         ],
         borderColor: "black",
         borderWidth: 2,
+        tention: 0.4,
+        yAxisID: 'y',
       },
       {
         label: "gyro_y",
@@ -84,6 +87,8 @@ function App() {
         ],
         borderColor: "black",
         borderWidth: 2,
+        tention: 0.4,
+        yAxisID: 'y1',
       },
     ],
   });
@@ -106,8 +111,6 @@ function App() {
         <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
         {/* </div> */}
       </nav>
-
-
 
       {/* <h1>Ello👋 :) </h1>
       <ul>
