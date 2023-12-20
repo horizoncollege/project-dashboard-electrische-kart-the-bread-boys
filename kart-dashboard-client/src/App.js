@@ -54,7 +54,7 @@ function App() {
       },
       {
         label: "gyro_z",
-        data: UserData.map((data) => data.gyro_y),
+        data: UserData.map((data) => data.gyro_z),
         backgroundColor: [
           "rgba(218, 77, 77, 1)",
         ],
@@ -64,16 +64,16 @@ function App() {
     ],
   });
 
-  function timeConverter(timestamp){
+  function timeConverter(timestamp) {
     var a = new Date(timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
     var hour = a.getHours();
     var min = a.getMinutes();
     var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
     return time;
   }
 
@@ -86,24 +86,47 @@ function App() {
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
         ],
+
+
         borderColor: "black",
         borderWidth: 2,
-        tension: 0.4,
         yAxisID: 'y',
+
       },
       {
-        label: "gyro_y",
-        data: UserData.map((data) => data.gyro_x),
+        label: "Voltage usage",
+        data: UserData.map((data) => 25 - data.voltage),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
         ],
         borderColor: "black",
         borderWidth: 2,
-        tension: 0.4,
         yAxisID: 'right', // Use 'right' instead of 'y1'
+
+      }
+    ]
+  }
+  );
+
+  const config = {
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
+        },
+        right: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
       },
-    ],
-  });
+    },
+  };
 
   // Wait for an update and then fetch the data
   React.useEffect(() => {
@@ -207,7 +230,7 @@ function App() {
           <div className='volt-meter'>
             <h2>Battery meter/Volt usage</h2>
             <div className='linechartvolt'>
-              <LineChart chartData={voltData} />
+              <LineChart chartData={voltData} config={config} />
             </div>
           </div>
         </div>
