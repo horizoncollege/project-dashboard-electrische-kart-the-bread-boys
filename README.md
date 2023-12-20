@@ -35,6 +35,15 @@ Niek
 4. Run in the root of the project ```npm run setup-dashboard``` to install all the dependencies
 5. Run ```npm run start-front-end``` to run the front-end
 
+
+## Downloading ChartJS
+
+1. cd into project-dashboard-electrische-kart-the-bread-boys/kart-dashboard-client
+2. Run ```npm add chart.js react-chartjs-2```
+3. go back to root (cd ..)
+4. run ```npm run start```
+
+
 ## Use the api
 
 This is the documentation for the current API
@@ -42,6 +51,7 @@ This is the documentation for the current API
 #### Change the port
 
 To change the port of the API you need to open the ```.env``` file and change the ```REACT_APP_BACKEND_PORT``` in the client and ```HOST_PORT``` must be the same in the back-end
+
 
 #### Urls
 The url will look something like this and the following examples will contain the ending

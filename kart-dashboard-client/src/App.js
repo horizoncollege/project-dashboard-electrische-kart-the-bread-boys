@@ -32,7 +32,7 @@ function App() {
   const [data, setData] = React.useState([]);
   // BarChart
   const [speedData, setUserData] = useState({
-    labels: UserData.map((data) => data.time),
+    labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
         label: "gyro_x",
@@ -63,9 +63,20 @@ function App() {
       },
     ],
   });
-
+  function timeConverter(timestamp){
+    var a = new Date(timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+  }
   const [voltData] = useState({
-    labels: UserData.map((data) => data.time),
+    labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
         label: "Battery",
