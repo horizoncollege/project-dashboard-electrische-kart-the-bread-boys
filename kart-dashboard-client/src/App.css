@@ -1,9 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #303030;
+  background-color: #001A42;
 }
 
 .App {
+  color: white;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* header */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #223E68;
+  padding: 1.5%;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+.titlebreb {
   display: flex;
   justify-content: center;
-  color: white;
+  align-items: center;
+  width: 37%;
+  margin-right: 35%;
+  margin-left: 40%;
+  font-size: 1vw;
+}
+
+/* .titlebreb, h1{
+  font-size: xx-large;
+} */
+
+.breblogoc {
+  width: 3%;
+}
+
+/* sidebar  */
+.sidebar {
+  background-color: rgba(34, 62, 104, 1);
+  width: 15vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+.sidebar h2 {
+  font-size: 1.5vw;
+  margin-bottom: 18%;
+}
+
+.sidebar p {
+  font-size: 1vw;
+  margin-top: 2%;
+}
+
+#date {
+  margin-top: 7%;
+}
+
+select {
+  font-size: 1vw;
+  width: 13vw;
+  height: 2.5vw;
+  border-radius: 0.5vw;
+  background-color: rgba(65, 93, 135, 1);
+  color: #ffffff;
+  margin-top: 7%;
+  filter: drop-shadow(0.1vw 0.1vw 0vw black);
+}
+
+#add {
+  font-size: 1vw;
+  width: 13vw;
+  height: 2.5vw;
+  border-radius: 0.5vw;
+  background-color: rgba(65, 93, 135, 1);
+  color: #ffffff;
+  margin-top: 7%;
+
+}
+
+#delete-all {
+  font-size: 1vw;
+  width: 13vw;
+  height: 2.5vw;
+  border-radius: 0.5vw;
+  background-color: rgba(218, 77, 77, 1);
+  color: #ffffff;
+  margin-top: 100%;
+}
+
+.next-eachother {
+  display: flex;
+  flex-direction: row;
+}
+
+/* km-h */
+.km-h {
+  background-color: rgba(34, 62, 104, 1);
+  height: 22vw;
+  width: 41vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+.barchartspeed {
+  width: 40vw;
+}
+
+/* gyro */
+.gyro {
+  background-color: rgba(34, 62, 104, 1);
+  height: 22vw;
+  width: 41vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+/* volt meter */
+.volt-meter {
+  background-color: rgba(34, 62, 104, 1);
+  height: 44vw;
+  width: 81vw;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+.linechartvolt {
+  width: 80vw;
+}
+
+/* footer */
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 1vw;
+}
+
+.footerinhoud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #223e68;
+  padding: 1%;
+  filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
 }

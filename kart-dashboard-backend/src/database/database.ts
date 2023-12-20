@@ -68,77 +68,71 @@ class DataBase {
         }
     }
 
-    public getAllData(): Promise<object[]> {
+    private async executeQuery(query: string, params: any[] = []): Promise<object[]> {
         return new Promise((resolve, reject) => {
-            this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
-            this.db.query("SELECT sensor_data.data_ID, date, time, voltage, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z FROM sensor_data INNER JOIN voltage_data ON sensor_data.data_ID = voltage_data.data_ID INNER JOIN gyroscope_data ON sensor_data.data_ID = gyroscope_data.data_ID INNER JOIN acceleration_data ON sensor_data.data_ID = acceleration_data.data_ID INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID", (error, results) => {
+            this.logger.Info(`Executing query: ${query}`);
+            this.db.query(query, params, (error, results) => {
                 if (error) {
-                    this.logger.Error(`${error}`);
+                    this.logger.Error(`Error executing query: ${error}`);
                     reject(error);
                 } else {
-                    this.logger.Info("Getting all data from database");
+                    this.logger.Info("Query executed successfully");
                     resolve(results);
                 }
             });
         });
     }
 
+    public getAllData(): Promise<object[]> {
+        const query: string = `
+        SELECT sensor_data.data_ID, date, time, voltage, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z 
+        FROM sensor_data 
+        INNER JOIN voltage_data ON sensor_data.data_ID = voltage_data.data_ID 
+        INNER JOIN gyroscope_data ON sensor_data.data_ID = gyroscope_data.data_ID 
+        INNER JOIN acceleration_data ON sensor_data.data_ID = acceleration_data.data_ID 
+        INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID`
+        return this.executeQuery(query);
+    }
+
     // Get the voltage data
     public getVoltage(): Promise<object[]> {
-        return new Promise((resolve, reject) => {
-            this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
-            this.db.query("SELECT  sensor_data.data_ID, date , time, voltage from sensor_data INNER JOIN voltage_data on sensor_data.data_ID = voltage_data.data_ID ", (error, results) => {
-                if (error) {
-                    this.logger.Error(`${error}`);
-                    reject(error);
-                } else {
-                    this.logger.Info("Getting all data from database");
-                    resolve(results);
-                }
-            });
-        });
+        const query: string = `
+        SELECT sensor_data.data_ID, date , time, voltage from sensor_data 
+        INNER JOIN voltage_data on sensor_data.data_ID = voltage_data.data_ID`
+        return this.executeQuery(query);
     }
+
+    // Acceleration data
     public getAcceleration(): Promise<object[]> {
-        return new Promise((resolve, reject) => {
-            this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
-            this.db.query("SELECT  sensor_data.data_ID, date , time, acc_x, acc_y, acc_z from sensor_data INNER JOIN acceleration_data on sensor_data.data_ID = acceleration_data.data_ID ", (error, results) => {
-                if (error) {
-                    this.logger.Error(`${error}`);
-                    reject(error);
-                } else {
-                    this.logger.Info("Getting all data from database");
-                    resolve(results);
-                }
-            });
-        });
+        const query: string = `
+        SELECT  sensor_data.data_ID, date , time, acc_x, acc_y, acc_z from sensor_data 
+        INNER JOIN acceleration_data on sensor_data.data_ID = acceleration_data.data_ID`
+        return this.executeQuery(query);
     }
+
+    // GPS data
     public getGPS(): Promise<object[]> {
-        return new Promise((resolve, reject) => {
-            this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
-            this.db.query("SELECT  sensor_data.data_ID, date , time, gps_lat, gps_long from sensor_data INNER JOIN gps_data on sensor_data.data_ID = gps_data.data_ID ", (error, results) => {
-                if (error) {
-                    this.logger.Error(`${error}`);
-                    reject(error);
-                } else {
-                    this.logger.Info("Getting all data from database");
-                    resolve(results);
-                }
-            });
-        });
+        const query: string = `
+        SELECT sensor_data.data_ID, date , time, gps_lat, gps_long from sensor_data 
+        INNER JOIN gps_data on sensor_data.data_ID = gps_data.data_ID`;
+        return this.executeQuery(query);
     }
+
+    // Get gyro data
     public getGyroscope(): Promise<object[]> {
-        return new Promise((resolve, reject) => {
-            this.logger.Info(`Listening at http://${process.env.HOSTNAME}:${process.env.HOST_PORT}`);
-            this.db.query("SELECT  sensor_data.data_ID, date , time, gyro_x, gyro_y, gyro_z from sensor_data INNER JOIN gyroscope_data on sensor_data.data_ID = gyroscope_data.data_ID", (error, results) => {
-                if (error) {
-                    this.logger.Error(`${error}`);
-                    reject(error);
-                } else {
-                    this.logger.Info("Getting all data from database");
-                    resolve(results);
-                }
-            });
-        });
+        const query: string = `
+        SELECT sensor_data.data_ID, date , time, gyro_x, gyro_y, gyro_z from sensor_data 
+        INNER JOIN gyroscope_data on sensor_data.data_ID = gyroscope_data.data_ID`;
+        return this.executeQuery(query);
+    }
+
+    // Get speed
+    public getSpeed(): Promise<object[]> {
+        const query: string = `
+        SELECT sensor_data.data_ID, date , time, gps_lat, gps_long from sensor_data 
+        INNER JOIN gps_data on sensor_data.data_ID = gps_data.data_ID`;
+        const result = this.executeQuery(query);
+        return result;
     }
 
     // Get the database name
