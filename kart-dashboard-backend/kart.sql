@@ -209,3 +209,1703 @@ VALUES
 ALTER TABLE `gps_data`
   ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
 
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
+-- Updated reference in the `gps_data` table to the `sensor_data` table
+ALTER TABLE `gps_data`
+  ADD FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`);
+
