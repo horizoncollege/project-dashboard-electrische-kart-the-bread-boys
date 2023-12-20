@@ -28,7 +28,7 @@ impl ApiEndpoints {
     pub async fn start_listening(self) -> std::io::Result<()> {
         let addr = format!("{}:{}", self.hostname, self.port);
         self.log
-            .info(format!("Listening at {}", addr).as_str());
+            .info(format!("Listening at http://{}", addr).as_str());
 
         HttpServer::new(move || {
             App::new()
