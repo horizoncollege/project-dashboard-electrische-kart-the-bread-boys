@@ -76,7 +76,7 @@ function App() {
         ],
         borderColor: "black",
         borderWidth: 2,
-        tention: 0.4,
+        tension: 0.4,
         yAxisID: 'y',
       },
       {
@@ -87,12 +87,11 @@ function App() {
         ],
         borderColor: "black",
         borderWidth: 2,
-        tention: 0.4,
-        yAxisID: 'y1',
+        tension: 0.4,
+        yAxisID: 'right', // Use 'right' instead of 'y1'
       },
     ],
   });
-
 
   // Wait for an update and then fetch the data
   React.useEffect(() => {
