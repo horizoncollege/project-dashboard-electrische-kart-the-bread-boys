@@ -138,6 +138,10 @@ select {
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
+.radarchartgyro {
+  width: 20vw;
+}
+
 /* volt meter */
 .volt-meter {
   background-color: rgba(34, 62, 104, 1);
