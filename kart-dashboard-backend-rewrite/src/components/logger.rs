@@ -6,7 +6,6 @@ pub struct Logger {
 
 #[allow(dead_code)]
 impl Logger {
-    #[allow(dead_code)]
     // Constructor
     pub fn new(structname: &str) -> Self {
         let structname = structname.to_string();

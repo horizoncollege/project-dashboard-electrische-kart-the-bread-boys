@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import BackendConnection from './backend/Backendconnection.ts';
 import Logger from './backend/logger.ts';
+import BarChart from './components/BarChart.js';
+import LineChart from './components/MultiLineChart.js';
 
 // Create a new logger for app
 const log = new Logger("App");
@@ -10,7 +12,11 @@ log.Info("Front-end started");
 
 // Connect to the database
 const bc = new BackendConnection();
+//fetches data for charts
+const UserData = await bc.GetAllData();
 
+//variable to compare voltage use
+var compare = 25;
 
 // Fetch all data
 async function fetchData() {
@@ -26,6 +32,111 @@ async function fetchData() {
 function App() {
   // Use state so it can update live
   const [data, setData] = React.useState([]);
+  // BarChart
+  const [speedData, setUserData] = useState({
+    labels: UserData.map((data) => timeConverter(data.time)),
+    datasets: [
+      {
+        label: "topspeed",
+        data: UserData.map((data) => data.gyro_x),
+        backgroundColor: [
+          "rgba(0, 194, 255, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+      {
+        label: "avrgspeed",
+        data: UserData.map((data) => data.gyro_y),
+        backgroundColor: [
+          "rgba(255, 184, 0, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+      {
+        label: "speed",
+        data: UserData.map((data) => data.gyro_z),
+        backgroundColor: [
+          "rgba(218, 77, 77, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  });
+
+  function timeConverter(timestamp) {
+    var a = new Date(timestamp * 1000);
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+    return time;
+  }
+  function voltUsage(volt) {
+    const usage = compare - volt;
+    compare = volt;
+    if (usage < 0) {
+      return 0;
+    } else {
+      return usage
+    }
+  }
+  const [voltData] = useState({
+    labels: UserData.map((data) => timeConverter(data.time)),
+    datasets: [
+      {
+        label: "Battery",
+        data: UserData.map((data) => data.voltage),
+        backgroundColor: [
+          "rgba(0, 194, 255, 1)",
+        ],
+
+
+        borderColor: "black",
+        borderWidth: 2,
+        yAxisID: 'y',
+
+      },
+      {
+        label: "Voltage usage",
+        data: UserData.map((data) => voltUsage(data.voltage)),
+        backgroundColor: [
+          "rgba(255, 184, 0, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+        yAxisID: 'right', // Use 'right' instead of 'y1'
+
+      }
+    ]
+  }
+  );
+
+  const config = {
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
+        },
+        right: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
+      },
+    },
+  };
 
   // Wait for an update and then fetch the data
   React.useEffect(() => {
@@ -44,8 +155,6 @@ function App() {
         <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
         {/* </div> */}
       </nav>
-
-
 
       {/* <h1>Ello👋 :) </h1>
       <ul>
@@ -117,16 +226,31 @@ function App() {
 
           <div className='next-eachother'>
             <div className='km-h'>
-              <h2>truely a title</h2>
+              <h2>Speed</h2>
+              <div className='barchartspeed'>
+                <BarChart chartData={speedData} />
+              </div>
             </div>
 
             <div className='gyro'>
-              <h2>i like this new title, it suits me</h2>
+              <h2>Gyro</h2>
+              <div className='scatterchartgyro'>
+                {data.map((element, index) => (
+                  <div key={`data_${index}`}>
+                    <li>gyro_x: {element.gyro_x}</li>
+                    <li>gyro_y: {element.gyro_y}</li>
+                    <li>gyro_z: {element.gyro_z}</li>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className='volt-meter'>
             <h2>Battery meter/Volt usage</h2>
+            <div className='linechartvolt'>
+              <LineChart chartData={voltData} config={config} />
+            </div>
           </div>
         </div>
 

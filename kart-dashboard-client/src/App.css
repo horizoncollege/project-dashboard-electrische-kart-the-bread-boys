@@ -113,19 +113,27 @@ select {
 /* km-h */
 .km-h {
   background-color: rgba(34, 62, 104, 1);
-  height: 22vw;
+  height: 25vw;
   width: 41vw;
   margin-top: 1%;
   margin-left: 1%;
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+.km-h h2 {
+  font-size: 1.5vw;
+}
+
+.barchartspeed {
+  width: 39vw;
 }
 
 /* gyro */
 .gyro {
   background-color: rgba(34, 62, 104, 1);
-  height: 22vw;
+  height: 25vw;
   width: 41vw;
   margin-top: 1%;
   margin-left: 1%;
@@ -134,10 +142,14 @@ select {
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
+.gyro h2 {
+  font-size: 1.5vw;
+}
+
 /* volt meter */
 .volt-meter {
   background-color: rgba(34, 62, 104, 1);
-  height: 22vw;
+  height: 44vw;
   width: 81vw;
   margin-top: 1%;
   margin-left: 1%;
@@ -145,6 +157,14 @@ select {
   padding: 1%;
   border-radius: 1vw;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
+}
+
+.volt-meter h2 {
+  font-size: 1.5vw;
+}
+
+.linechartvolt {
+  width: 76vw;
 }
 
 /* footer */
