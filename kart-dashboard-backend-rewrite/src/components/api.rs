@@ -44,7 +44,7 @@ impl ApiEndpoints {
 
 #[get("/")]
 async fn hello() -> impl Responder {
-    HttpResponse::Ok().json("Hello world!")
+    HttpResponse::Ok().json("Hello, this is the backend!")
 }
 
 #[post("/echo")]

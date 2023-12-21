@@ -5,7 +5,6 @@ import Logger from './backend/logger.ts';
 import BarChart from './components/BarChart.js';
 import LineChart from './components/MultiLineChart.js';
 
-
 // Create a new logger for app
 const log = new Logger("App");
 
@@ -38,7 +37,7 @@ function App() {
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
-        label: "gyro_x",
+        label: "topspeed",
         data: UserData.map((data) => data.gyro_x),
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
@@ -47,7 +46,7 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "gyro_y",
+        label: "avrgspeed",
         data: UserData.map((data) => data.gyro_y),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
@@ -56,7 +55,7 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "gyro_z",
+        label: "speed",
         data: UserData.map((data) => data.gyro_z),
         backgroundColor: [
           "rgba(218, 77, 77, 1)",
@@ -227,14 +226,23 @@ function App() {
 
           <div className='next-eachother'>
             <div className='km-h'>
-              <h2>truely a title</h2>
+              <h2>Speed</h2>
               <div className='barchartspeed'>
                 <BarChart chartData={speedData} />
               </div>
             </div>
 
             <div className='gyro'>
-              <h2>i like this new title, it suits me</h2>
+              <h2>Gyro</h2>
+              <div className='scatterchartgyro'>
+                {data.map((element, index) => (
+                  <div key={`data_${index}`}>
+                    <li>gyro_x: {element.gyro_x}</li>
+                    <li>gyro_y: {element.gyro_y}</li>
+                    <li>gyro_z: {element.gyro_z}</li>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
