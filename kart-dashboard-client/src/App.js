@@ -16,6 +16,9 @@ const bc = new BackendConnection();
 //fetches data for charts
 const UserData = await bc.GetAllData();
 
+//variable to compare voltage use
+var compare = 25;
+
 // Fetch all data
 async function fetchData() {
   try {
@@ -76,7 +79,15 @@ function App() {
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
     return time;
   }
-
+  function voltUsage(volt) {
+    const usage = compare - volt;
+    compare = volt;
+    if (usage < 0) {
+      return 0;
+    } else {
+      return usage
+    }
+  }
   const [voltData] = useState({
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
@@ -95,7 +106,7 @@ function App() {
       },
       {
         label: "Voltage usage",
-        data: UserData.map((data) => 25 - data.voltage),
+        data: UserData.map((data) => voltUsage(data.voltage)),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
         ],
