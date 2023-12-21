@@ -111,14 +111,14 @@ function App() {
         ],
         borderColor: "black",
         borderWidth: 2,
-        yAxisID: 'right', // Use 'right' instead of 'y1'
+        yAxisID: 'right',
 
       }
     ]
   }
   );
 
-  const config = {
+  const volt = {
     options: {
       responsive: true,
       scales: {
@@ -133,6 +133,9 @@ function App() {
           display: true,
           position: 'right',
           ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
         },
       },
     },
@@ -249,7 +252,7 @@ function App() {
           <div className='volt-meter'>
             <h2>Battery meter/Volt usage</h2>
             <div className='linechartvolt'>
-              <LineChart chartData={voltData} config={config} />
+              <LineChart chartData={voltData} config={volt} />
             </div>
           </div>
         </div>
