@@ -15,6 +15,9 @@ const bc = new BackendConnection();
 //fetches data for charts
 const UserData = await bc.GetAllData();
 
+//variable to compare voltage use
+var compare = 25;
+
 // Fetch all data
 async function fetchData() {
   try {
@@ -75,7 +78,15 @@ function App() {
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
     return time;
   }
-
+  function voltUsage(volt) {
+    const usage = compare - volt;
+    compare = volt;
+    if (usage < 0) {
+      return 0;
+    } else {
+      return usage
+    }
+  }
   const [voltData] = useState({
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
@@ -94,20 +105,20 @@ function App() {
       },
       {
         label: "Voltage usage",
-        data: UserData.map((data) => 25 - data.voltage),
+        data: UserData.map((data) => voltUsage(data.voltage)),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
         ],
         borderColor: "black",
         borderWidth: 2,
-        yAxisID: 'right', // Use 'right' instead of 'y1'
+        yAxisID: 'right',
 
       }
     ]
   }
   );
 
-  const config = {
+  const volt = {
     options: {
       responsive: true,
       scales: {
@@ -122,6 +133,9 @@ function App() {
           display: true,
           position: 'right',
           ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
         },
       },
     },
@@ -238,7 +252,7 @@ function App() {
           <div className='volt-meter'>
             <h2>Battery meter/Volt usage</h2>
             <div className='linechartvolt'>
-              <LineChart chartData={voltData} config={config} />
+              <LineChart chartData={voltData} config={volt} />
             </div>
           </div>
         </div>

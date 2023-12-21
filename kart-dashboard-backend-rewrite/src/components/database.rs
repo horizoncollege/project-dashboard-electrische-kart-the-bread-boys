@@ -1,12 +1,14 @@
 use mysql::prelude::*;
 use mysql::*;
 use std::env;
+use super::logger::Logger;
 
 #[derive(Debug, PartialEq)]
-
 pub struct AllData { 
     
 }
+
+#[derive(Debug, PartialEq)]
 pub struct Voltage {
     pub data_id: i32,
     pub time: i32,
@@ -14,7 +16,6 @@ pub struct Voltage {
 }
 
 #[derive(Debug, PartialEq)]
-
 pub struct GpsData {
     data_id: i32,
     time: i32,
@@ -25,6 +26,7 @@ pub struct GpsData {
 
 pub struct DatabaseConnection {
     conn: PooledConn,
+    log: Logger,
 }
 
 impl DatabaseConnection {
@@ -42,13 +44,13 @@ impl DatabaseConnection {
             "mysql://{}:{}@{}:{}/{}",
             username, password, hostname, sql_port, database_name
         ))?;
-
+        let log = Logger::new("DatabaseConnection");
         let pool = Pool::new(opts)?;
         let conn = pool.get_conn()?;
-        Ok(DatabaseConnection { conn })
+        Ok(DatabaseConnection { conn, log })
     }
 
-    // pub async fn get_all(&mut self) -> Result<Vec<Voltage>, mysql::Error> {
+    // pub async fn get_all(&mut self) -> Result<Vec<AllData>, mysql::Error> {
 
     // }
 
@@ -63,6 +65,7 @@ impl DatabaseConnection {
                 }
             },
         )?;
+        self.log.info("Fetching all voltages");
         Ok(result)
     }
 
