@@ -5,7 +5,6 @@ import Logger from './backend/logger.ts';
 import BarChart from './components/BarChart.js';
 import LineChart from './components/MultiLineChart.js';
 
-
 // Create a new logger for app
 const log = new Logger("App");
 
@@ -35,7 +34,7 @@ function App() {
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
-        label: "gyro_x",
+        label: "topspeed",
         data: UserData.map((data) => data.gyro_x),
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
@@ -44,7 +43,7 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "gyro_y",
+        label: "avrgspeed",
         data: UserData.map((data) => data.gyro_y),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
@@ -53,8 +52,8 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "gyro_z",
-        data: UserData.map((data) => data.gyro_y),
+        label: "speed",
+        data: UserData.map((data) => data.gyro_z),
         backgroundColor: [
           "rgba(218, 77, 77, 1)",
         ],
@@ -63,18 +62,20 @@ function App() {
       },
     ],
   });
-  function timeConverter(timestamp){
+
+  function timeConverter(timestamp) {
     var a = new Date(timestamp * 1000);
-    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
     var hour = a.getHours();
     var min = a.getMinutes();
     var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
     return time;
   }
+
   const [voltData] = useState({
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
@@ -84,21 +85,47 @@ function App() {
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
         ],
+
+
         borderColor: "black",
         borderWidth: 2,
+        yAxisID: 'y',
+
       },
       {
-        label: "gyro_y",
-        data: UserData.map((data) => data.gyro_x),
+        label: "Voltage usage",
+        data: UserData.map((data) => 25 - data.voltage),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
         ],
         borderColor: "black",
         borderWidth: 2,
-      },
-    ],
-  });
+        yAxisID: 'right', // Use 'right' instead of 'y1'
 
+      }
+    ]
+  }
+  );
+
+  const config = {
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
+        },
+        right: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
+      },
+    },
+  };
 
   // Wait for an update and then fetch the data
   React.useEffect(() => {
@@ -117,8 +144,6 @@ function App() {
         <img src="/breb-circle.png" className='breblogoc' alt="Breb Circle" />
         {/* </div> */}
       </nav>
-
-
 
       {/* <h1>Ello👋 :) </h1>
       <ul>
@@ -190,21 +215,30 @@ function App() {
 
           <div className='next-eachother'>
             <div className='km-h'>
-              <h2>truely a title</h2>
+              <h2>Speed</h2>
               <div className='barchartspeed'>
                 <BarChart chartData={speedData} />
               </div>
             </div>
 
             <div className='gyro'>
-              <h2>i like this new title, it suits me</h2>
+              <h2>Gyro</h2>
+              <div className='scatterchartgyro'>
+                {data.map((element, index) => (
+                  <div key={`data_${index}`}>
+                    <li>gyro_x: {element.gyro_x}</li>
+                    <li>gyro_y: {element.gyro_y}</li>
+                    <li>gyro_z: {element.gyro_z}</li>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className='volt-meter'>
             <h2>Battery meter/Volt usage</h2>
             <div className='linechartvolt'>
-              <LineChart chartData={voltData} />
+              <LineChart chartData={voltData} config={config} />
             </div>
           </div>
         </div>
