@@ -4,10 +4,11 @@ use std::env;
 use super::logger::Logger;
 
 #[derive(Debug, PartialEq)]
-
 pub struct AllData { 
     
 }
+
+#[derive(Debug, PartialEq)]
 pub struct Voltage {
     pub data_id: i32,
     pub time: i32,
@@ -15,7 +16,6 @@ pub struct Voltage {
 }
 
 #[derive(Debug, PartialEq)]
-
 pub struct GpsData {
     data_id: i32,
     time: i32,
