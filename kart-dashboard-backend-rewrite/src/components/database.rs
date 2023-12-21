@@ -50,7 +50,7 @@ impl DatabaseConnection {
         Ok(DatabaseConnection { conn, log })
     }
 
-    // pub async fn get_all(&mut self) -> Result<Vec<Voltage>, mysql::Error> {
+    // pub async fn get_all(&mut self) -> Result<Vec<AllData>, mysql::Error> {
 
     // }
 
