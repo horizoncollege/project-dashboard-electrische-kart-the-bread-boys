@@ -42,9 +42,48 @@ app.get("/ALL", cors(corsOptions), async (req, res) => {
     }
 });
 
-app.get("/voltage", cors(corsOptions), async (req, res) => {
+app.get("/VOLTAGE", cors(corsOptions), async (req, res) => {
     try {
         const data = await db.getVoltage();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+app.get("/ACCELERATION", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getAcceleration();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+app.get("/GPS", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getGPS();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+app.get("/SPEED", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getSpeed();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+app.get("/GYRO", cors(corsOptions), async (req, res) => {
+    try {
+        const data = await db.getGyroscope();
         res.json(data);
     } catch (error) {
         console.error(error);
