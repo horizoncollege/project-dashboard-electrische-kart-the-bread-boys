@@ -37,7 +37,7 @@ function App() {
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
-        label: "topspeed",
+        label: "Top speed",
         data: UserData.map((data) => data.gyro_x),
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
@@ -46,7 +46,7 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "avrgspeed",
+        label: "Average speed",
         data: UserData.map((data) => data.gyro_y),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
@@ -55,7 +55,7 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "speed",
+        label: "Speed",
         data: UserData.map((data) => data.gyro_z),
         backgroundColor: [
           "rgba(218, 77, 77, 1)",
@@ -65,6 +65,23 @@ function App() {
       },
     ],
   });
+
+  const speed = {
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "white", beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
+        },
+      },
+    },
+  };
 
   function timeConverter(timestamp) {
     var a = new Date(timestamp * 1000);
@@ -96,12 +113,9 @@ function App() {
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
         ],
-
-
         borderColor: "black",
         borderWidth: 2,
         yAxisID: 'y',
-
       },
       {
         label: "Voltage usage",
@@ -112,7 +126,6 @@ function App() {
         borderColor: "black",
         borderWidth: 2,
         yAxisID: 'right',
-
       }
     ]
   }
@@ -231,7 +244,7 @@ function App() {
             <div className='km-h'>
               <h2>Speed</h2>
               <div className='barchartspeed'>
-                <BarChart chartData={speedData} />
+                <BarChart chartData={speedData} config={speed} />
               </div>
             </div>
 
