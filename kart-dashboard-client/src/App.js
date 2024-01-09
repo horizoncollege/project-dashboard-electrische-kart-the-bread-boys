@@ -68,6 +68,13 @@ function App() {
 
   const speed = {
     options: {
+      plugins: {  // 'legend' now within object 'plugins {}'
+        legend: {
+          labels: {
+            color: "white",  // not 'fontColor:' anymore
+          }
+        }
+      },
       responsive: true,
       scales: {
         y: {
@@ -135,7 +142,7 @@ function App() {
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
-        label: "Top speed",
+        label: "X-axis",
         data: UserData.map((data) => data.gyro_x),
         backgroundColor: [
           "rgba(0, 194, 255, 1)",
@@ -144,7 +151,7 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "Average speed",
+        label: "Y-axis",
         data: UserData.map((data) => data.gyro_y),
         backgroundColor: [
           "rgba(255, 184, 0, 1)",
@@ -153,7 +160,7 @@ function App() {
         borderWidth: 2,
       },
       {
-        label: "Speed",
+        label: "Z-axis",
         data: UserData.map((data) => data.gyro_z),
         backgroundColor: [
           "rgba(218, 77, 77, 1)",
@@ -167,6 +174,13 @@ function App() {
 
   const volt = {
     options: {
+      plugins: {  // 'legend' now within object 'plugins {}'
+        legend: {
+          labels: {
+            color: "white",  // not 'fontColor:' anymore
+          }
+        }
+      },
       responsive: true,
       scales: {
         y: {
@@ -190,13 +204,20 @@ function App() {
 
   const gyro = {
     options: {
+      plugins: {  // 'legend' now within object 'plugins {}'
+        legend: {
+          labels: {
+            color: "white",  // not 'fontColor:' anymore
+          }
+        }
+      },
       responsive: true,
       scales: {
         y: {
           type: 'linear',
           display: true,
           position: 'left',
-          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
+          ticks: { color: "rgba(255, 255, 255, 1)", beginAtZero: true }
         },
         x: {
           ticks: { color: 'white', beginAtZero: true }
