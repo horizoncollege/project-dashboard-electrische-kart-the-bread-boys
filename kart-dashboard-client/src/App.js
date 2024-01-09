@@ -8,7 +8,7 @@ import LineChart from './components/MultiLineChart.js';
 // Create a new logger for app
 const log = new Logger("App");
 
-log.Info("Front-end started"); 
+log.Info("Front-end started");
 
 // Connect to the database
 const bc = new BackendConnection();
@@ -19,10 +19,11 @@ const UserData = await bc.GetAllData();
 //variable to compare voltage use
 var compare = 25;
 
+
 // Fetch all data
 async function fetchData() {
   try {
-    const receivedData = await bc.GetAllData(1698913481, 1698913654); 
+    const receivedData = await bc.GetAllData(); 
     return receivedData;
   } catch (error) {
     log.error('Error fetching data:', error);
@@ -163,7 +164,7 @@ function App() {
     });
   }, []);
 
-  return (
+  return (  
     <div className="App">
       <nav>
         <div className='titlebreb'>

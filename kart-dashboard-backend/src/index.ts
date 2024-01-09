@@ -18,6 +18,11 @@ const app = express();
 // Create a new database object
 const db = new Database();
 
+//time and date prototype values
+const start_time = 1698913481;
+const end_time = 1698913654;
+const date = "2023-11-02"
+
 // Connect to database
 db.connectDB();
 
@@ -34,7 +39,7 @@ app.get("/", cors(corsOptions), (req, res) => {
 // Url params ALL for all data
 app.get("/ALL", cors(corsOptions), async (req, res) => {
     try {
-        const data = await db.getAllData(1698913481, 1698913654);
+        const data = await db.getAllData(date, start_time, end_time);
         res.json(data);
     } catch (error) {
         console.error(error);
