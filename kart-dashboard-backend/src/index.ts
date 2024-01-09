@@ -34,7 +34,7 @@ app.get("/", cors(corsOptions), (req, res) => {
 // Url params ALL for all data
 app.get("/ALL", cors(corsOptions), async (req, res) => {
     try {
-        const data = await db.getAllData();
+        const data = await db.getAllData(1698913481, 1698913654);
         res.json(data);
     } catch (error) {
         console.error(error);

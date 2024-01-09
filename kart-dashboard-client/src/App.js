@@ -8,12 +8,13 @@ import LineChart from './components/MultiLineChart.js';
 // Create a new logger for app
 const log = new Logger("App");
 
-log.Info("Front-end started");
+log.Info("Front-end started"); 
 
 // Connect to the database
 const bc = new BackendConnection();
 //fetches data for charts
 const UserData = await bc.GetAllData();
+
 
 //variable to compare voltage use
 var compare = 25;
@@ -21,7 +22,7 @@ var compare = 25;
 // Fetch all data
 async function fetchData() {
   try {
-    const receivedData = await bc.GetAllData();
+    const receivedData = await bc.GetAllData(1698913481, 1698913654); 
     return receivedData;
   } catch (error) {
     log.error('Error fetching data:', error);
@@ -86,7 +87,7 @@ function App() {
   function timeConverter(timestamp) {
     var a = new Date(timestamp * 1000);
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var year = a.getFullYear();
+    var year = a.getFullYear(); 
     var month = months[a.getMonth()];
     var date = a.getDate();
     var hour = a.getHours();
@@ -96,11 +97,12 @@ function App() {
     return time;
   }
   function voltUsage(volt) {
-    const usage = compare - volt;
-    compare = volt;
+    var usage = compare - volt;
     if (usage < 0) {
-      return 0;
+      compare = volt
+      return 25 - volt;
     } else {
+    compare = volt;
       return usage
     }
   }
