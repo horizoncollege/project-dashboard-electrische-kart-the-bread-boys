@@ -69,6 +69,7 @@ function App() {
   const speed = {
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           type: 'linear',
@@ -131,9 +132,59 @@ function App() {
   }
   );
 
+  const [gyroData] = useState({
+    labels: UserData.map((data) => timeConverter(data.time)),
+    datasets: [
+      {
+        label: "Battery",
+        data: UserData.map((data) => data.voltage),
+        backgroundColor: [
+          "rgba(0, 194, 255, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+        yAxisID: 'y',
+      },
+      {
+        label: "Voltage usage",
+        data: UserData.map((data) => voltUsage(data.voltage)),
+        backgroundColor: [
+          "rgba(255, 184, 0, 1)",
+        ],
+
+      }
+    ]
+  }
+  );
+
   const volt = {
     options: {
       responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
+        },
+        right: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
+        },
+      },
+    },
+  };
+
+  const gyro = {
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           type: 'linear',
@@ -234,8 +285,6 @@ function App() {
           </form>
 
           <button id='add'>Add 💾</button>
-
-          <button id='delete-all'>Delete all</button>
         </div>
 
         <div className='blocks'>
@@ -250,7 +299,7 @@ function App() {
 
             <div className='gyro'>
               <h2>Gyro</h2>
-              <div className='scatterchartgyro'>
+              {/* <div className='scatterchartgyro'>
                 {data.map((element, index) => (
                   <div key={`data_${index}`}>
                     <li>gyro_x: {element.gyro_x}</li>
@@ -258,6 +307,9 @@ function App() {
                     <li>gyro_z: {element.gyro_z}</li>
                   </div>
                 ))}
+              </div> */}
+              <div className='gyroChart'>
+                <LineChart chartData={gyroData} config={gyro} />
               </div>
             </div>
           </div>
