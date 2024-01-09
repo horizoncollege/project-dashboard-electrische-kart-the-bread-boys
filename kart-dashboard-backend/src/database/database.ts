@@ -83,14 +83,15 @@ class DataBase {
         });
     }
 
-    public getAllData(): Promise<object[]> {
-        const query: string = `
+    public getAllData(date, start_time, end_time): Promise<object[]> {
+        var query: string = `
         SELECT sensor_data.data_ID, date, time, voltage, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z 
         FROM sensor_data 
         INNER JOIN voltage_data ON sensor_data.data_ID = voltage_data.data_ID 
         INNER JOIN gyroscope_data ON sensor_data.data_ID = gyroscope_data.data_ID 
         INNER JOIN acceleration_data ON sensor_data.data_ID = acceleration_data.data_ID 
-        INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID`
+        INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID
+        where date = "${date}" and time between ${start_time} and ${end_time}`
         return this.executeQuery(query);
     }
 
