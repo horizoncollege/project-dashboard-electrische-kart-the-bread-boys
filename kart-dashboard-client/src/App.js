@@ -76,6 +76,7 @@ function App() {
         }
       },
       responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           type: 'linear',
@@ -182,6 +183,31 @@ function App() {
         }
       },
       responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
+        },
+        right: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
+        },
+      },
+    },
+  };
+
+  const gyro = {
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           type: 'linear',
