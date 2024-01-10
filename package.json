@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run start-back-end\" \"npm run start-front-end\"",
-    "start-back-end": "npm start --prefix ./kart-dashboard-backend",
+    "start-back-end": "cargo run --release --manifest-path ./kart-dashboard-backend/Cargo.toml",
     "start-front-end": "npm start --prefix ./kart-dashboard-client",
-    "setup-dashboard": "\"npm install\" && npm install --prefix ./kart-dashboard-backend && npm install --prefix ./kart-dashboard-client"
+    "setup-dashboard": "\"npm install\" && cargo build --release --manifest-path ./kart-dashboard-backend/Cargo.toml && npm install --prefix ./kart-dashboard-client"
   },
   "author": "",
   "license": "ISC",
