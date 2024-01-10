@@ -15,8 +15,10 @@ const bc = new BackendConnection();
 //fetches data for charts
 const UserData = await bc.GetAllData();
 
+
 //variable to compare voltage use
 var compare = 25;
+
 
 // Fetch all data
 async function fetchData() {
@@ -68,10 +70,10 @@ function App() {
 
   const speed = {
     options: {
-      plugins: {  // 'legend' now within object 'plugins {}'
+      plugins: {
         legend: {
           labels: {
-            color: "white",  // not 'fontColor:' anymore
+            color: "white",
           }
         }
       },
@@ -104,11 +106,12 @@ function App() {
     return time;
   }
   function voltUsage(volt) {
-    const usage = compare - volt;
-    compare = volt;
+    var usage = compare - volt;
     if (usage < 0) {
-      return 0;
+      compare = volt
+      return 25 - volt;
     } else {
+    compare = volt;
       return usage
     }
   }
@@ -175,10 +178,10 @@ function App() {
 
   const volt = {
     options: {
-      plugins: {  // 'legend' now within object 'plugins {}'
+      plugins: {
         legend: {
           labels: {
-            color: "white",  // not 'fontColor:' anymore
+            color: "white",
           }
         }
       },
@@ -208,32 +211,10 @@ function App() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: {
-        y: {
-          type: 'linear',
-          display: true,
-          position: 'left',
-          ticks: { color: "rgba(0, 194, 255, 1)", beginAtZero: true }
-        },
-        right: {
-          type: 'linear',
-          display: true,
-          position: 'right',
-          ticks: { color: "rgba(255, 184, 0, 1)", beginAtZero: true }
-        },
-        x: {
-          ticks: { color: 'white', beginAtZero: true }
-        },
-      },
-    },
-  };
-
-  const gyro = {
-    options: {
-      plugins: {  // 'legend' now within object 'plugins {}'
+      plugins: {
         legend: {
           labels: {
-            color: "white",  // not 'fontColor:' anymore
+            color: "white",
           }
         }
       },
@@ -293,16 +274,7 @@ function App() {
 
       <div className='content-container'>
         <div className='sidebar'>
-          <h2>Add a graph :)</h2>
-
-          <form>
-            <p>Voltage meter</p>
-            <p>Voltage usage</p>
-            <p>Km/h</p>
-            <p>Gyro</p>
-            <p>Gps</p>
-            <p>Whether</p>
-          </form>
+          <h2>Select your time and date:</h2>
 
           <form>
             <select id="date" name="date">
@@ -331,7 +303,7 @@ function App() {
             </select>
           </form>
 
-          <button id='add'>Add 💾</button>
+          <button id='add'>Confirm</button>
         </div>
 
         <div className='blocks'>
