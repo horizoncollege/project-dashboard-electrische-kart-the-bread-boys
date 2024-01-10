@@ -23,7 +23,7 @@ var compare = 25;
 // Fetch all data
 async function fetchData() {
   try {
-    const receivedData = await bc.GetAllData(); 
+    const receivedData = await bc.GetAllData();
     return receivedData;
   } catch (error) {
     log.error('Error fetching data:', error);
@@ -70,7 +70,15 @@ function App() {
 
   const speed = {
     options: {
+      plugins: {  // 'legend' now within object 'plugins {}'
+        legend: {
+          labels: {
+            color: "white",  // not 'fontColor:' anymore
+          }
+        }
+      },
       responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           type: 'linear',
@@ -88,7 +96,7 @@ function App() {
   function timeConverter(timestamp) {
     var a = new Date(timestamp * 1000);
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var year = a.getFullYear(); 
+    var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
     var hour = a.getHours();
@@ -134,9 +142,51 @@ function App() {
   }
   );
 
+  const [gyroData] = useState({
+    labels: UserData.map((data) => timeConverter(data.time)),
+    datasets: [
+      {
+        label: "X-axis",
+        data: UserData.map((data) => data.gyro_x),
+        backgroundColor: [
+          "rgba(0, 194, 255, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+      {
+        label: "Y-axis",
+        data: UserData.map((data) => data.gyro_y),
+        backgroundColor: [
+          "rgba(255, 184, 0, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+      {
+        label: "Z-axis",
+        data: UserData.map((data) => data.gyro_z),
+        backgroundColor: [
+          "rgba(218, 77, 77, 1)",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ]
+  }
+  );
+
   const volt = {
     options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          }
+        }
+      },
       responsive: true,
+      maintainAspectRatio: false,
       scales: {
         y: {
           type: 'linear',
@@ -157,6 +207,32 @@ function App() {
     },
   };
 
+  const gyro = {
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          }
+        }
+      },
+      responsive: true,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "rgba(255, 255, 255, 1)", beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
+        },
+      },
+    },
+  };
+
   // Wait for an update and then fetch the data
   React.useEffect(() => {
     fetchData().then((receivedData) => {
@@ -164,7 +240,7 @@ function App() {
     });
   }, []);
 
-  return (  
+  return (
     <div className="App">
       <nav>
         <div className='titlebreb'>
@@ -198,16 +274,7 @@ function App() {
 
       <div className='content-container'>
         <div className='sidebar'>
-          <h2>Add a graph :)</h2>
-
-          <form>
-            <p>Voltage meter</p>
-            <p>Voltage usage</p>
-            <p>Km/h</p>
-            <p>Gyro</p>
-            <p>Gps</p>
-            <p>Whether</p>
-          </form>
+          <h2>Select your time and date:</h2>
 
           <form>
             <select id="date" name="date">
@@ -237,8 +304,6 @@ function App() {
           </form>
 
           <button id='add'>Add 💾</button>
-
-          <button id='delete-all'>Delete all</button>
         </div>
 
         <div className='blocks'>
@@ -253,7 +318,7 @@ function App() {
 
             <div className='gyro'>
               <h2>Gyro</h2>
-              <div className='scatterchartgyro'>
+              {/* <div className='scatterchartgyro'>
                 {data.map((element, index) => (
                   <div key={`data_${index}`}>
                     <li>gyro_x: {element.gyro_x}</li>
@@ -261,6 +326,9 @@ function App() {
                     <li>gyro_z: {element.gyro_z}</li>
                   </div>
                 ))}
+              </div> */}
+              <div className='gyroChart'>
+                <LineChart chartData={gyroData} config={gyro} />
               </div>
             </div>
           </div>
