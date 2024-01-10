@@ -70,10 +70,10 @@ function App() {
 
   const speed = {
     options: {
-      plugins: {  // 'legend' now within object 'plugins {}'
+      plugins: {
         legend: {
           labels: {
-            color: "white",  // not 'fontColor:' anymore
+            color: "white",
           }
         }
       },
@@ -303,7 +303,7 @@ function App() {
             </select>
           </form>
 
-          <button id='add'>Add 💾</button>
+          <button id='add'>Confirm</button>
         </div>
 
         <div className='blocks'>
