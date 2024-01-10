@@ -57,21 +57,13 @@ nav {
 }
 
 .sidebar h2 {
-  /* titles */
   font-size: calc(10px + 0.9vw);
   margin-left: 0.8%;
-  margin-bottom: 18%;
-}
-
-.sidebar p {
-  /* normal text */
-  font-size: calc(8px + 0.6vw);
-  margin-left: 0.8%;
-  margin-top: 2%;
+  margin-bottom: 9%;
 }
 
 #date {
-  margin-top: 7%;
+  margin-top: 1%;
 }
 
 select {
