@@ -23,7 +23,7 @@ var compare = 25;
 // Fetch all data
 async function fetchData() {
   try {
-    const receivedData = await bc.GetAllData(); 
+    const receivedData = await bc.GetAllData();
     return receivedData;
   } catch (error) {
     log.error('Error fetching data:', error);
@@ -96,7 +96,7 @@ function App() {
   function timeConverter(timestamp) {
     var a = new Date(timestamp * 1000);
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var year = a.getFullYear(); 
+    var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
     var hour = a.getHours();
@@ -178,10 +178,10 @@ function App() {
 
   const volt = {
     options: {
-      plugins: {  // 'legend' now within object 'plugins {}'
+      plugins: {
         legend: {
           labels: {
-            color: "white",  // not 'fontColor:' anymore
+            color: "white",
           }
         }
       },
@@ -211,10 +211,10 @@ function App() {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: {  // 'legend' now within object 'plugins {}'
+      plugins: {
         legend: {
           labels: {
-            color: "white",  // not 'fontColor:' anymore
+            color: "white",
           }
         }
       },
@@ -240,7 +240,7 @@ function App() {
     });
   }, []);
 
-  return (  
+  return (
     <div className="App">
       <nav>
         <div className='titlebreb'>
@@ -274,16 +274,7 @@ function App() {
 
       <div className='content-container'>
         <div className='sidebar'>
-          <h2>Add a graph :)</h2>
-
-          <form>
-            <p>Voltage meter</p>
-            <p>Voltage usage</p>
-            <p>Km/h</p>
-            <p>Gyro</p>
-            <p>Gps</p>
-            <p>Whether</p>
-          </form>
+          <h2>Select your time and date:</h2>
 
           <form>
             <select id="date" name="date">
