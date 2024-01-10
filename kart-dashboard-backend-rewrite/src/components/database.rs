@@ -1,11 +1,39 @@
+use super::logger::Logger;
 use mysql::prelude::*;
 use mysql::*;
 use std::env;
-use super::logger::Logger;
+use std::sync::Mutex;
 
 #[derive(Debug, PartialEq)]
-pub struct AllData { 
-    
+pub struct AllData {
+    pub data_id: i32,
+    pub time: i32,
+    pub gps_lat: f32,
+    pub gps_long: f32,
+    pub acc_x: f32,
+    pub acc_y: f32,
+    pub acc_z: f32,
+    pub gyro_x: f32,
+    pub gyro_y: f32,
+    pub gyro_z: f32,
+    pub voltage: f32,
+}
+
+#[derive(Debug, PartialEq)]
+pub struct AccData {
+    pub data_id: i32,
+    pub time: i32,
+    pub acc_x: f32,
+    pub acc_y: f32,
+    pub acc_z: f32,
+}
+
+#[derive(Debug, PartialEq)]
+pub struct GpsData {
+    pub data_id: i32,
+    pub time: i32,
+    pub gps_lat: f32,
+    pub gps_long: f32,
 }
 
 #[derive(Debug, PartialEq)]
@@ -16,19 +44,20 @@ pub struct Voltage {
 }
 
 #[derive(Debug, PartialEq)]
-pub struct GpsData {
-    data_id: i32,
-    time: i32,
-    gyro_x: f32,
-    gyro_y: f32,
-    gyro_z: f32,
+pub struct GyroData {
+    pub data_id: i32,
+    pub time: i32,
+    pub gyro_x: f32,
+    pub gyro_y: f32,
+    pub gyro_z: f32,
 }
 
 pub struct DatabaseConnection {
-    conn: PooledConn,
+    conn: Mutex<PooledConn>,
     log: Logger,
 }
 
+#[allow(dead_code)]
 impl DatabaseConnection {
     pub async fn new() -> Result<Self, mysql::Error> {
         let database_name =
@@ -47,15 +76,51 @@ impl DatabaseConnection {
         let log = Logger::new("DatabaseConnection");
         let pool = Pool::new(opts)?;
         let conn = pool.get_conn()?;
-        Ok(DatabaseConnection { conn, log })
+        let mutex_conn = Mutex::new(conn);
+
+        Ok(DatabaseConnection {
+            conn: mutex_conn,
+            log,
+        })
     }
 
-    // pub async fn get_all(&mut self) -> Result<Vec<AllData>, mysql::Error> {
+    pub async fn all_data(&self) -> Result<Vec<AllData>, mysql::Error> {
+        self.log.info("Executing query to fetch all data");
 
-    // }
+        let mut conn = self.conn.lock()?;
+
+        let result: Vec<AllData> = conn.query_map(
+            "
+            SELECT sensor_data.data_ID, time, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, voltage
+            FROM sensor_data 
+            INNER JOIN voltage_data ON sensor_data.data_ID = voltage_data.data_ID 
+            INNER JOIN gyroscope_data ON sensor_data.data_ID = gyroscope_data.data_ID 
+            INNER JOIN acceleration_data ON sensor_data.data_ID = acceleration_data.data_ID 
+            INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID",
+            |(data_id, time, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, voltage)| {
+                AllData {
+                    data_id,
+                    time,
+                    gps_lat,
+                    gps_long,
+                    acc_x,
+                    acc_y,
+                    acc_z,
+                    gyro_x,
+                    gyro_y,
+                    gyro_z,
+                    voltage,
+                }
+            },
+        )?;
+
+        self.log.info("Query executed successfully");
+        Ok(result)
+    }
 
     pub async fn voltage(&mut self) -> Result<Vec<Voltage>, mysql::Error> {
-        let result: Vec<Voltage> = self.conn.query_map(
+        let mut conn = self.conn.lock()?;
+        let result: Vec<Voltage> = conn.query_map(
             "SELECT sensor_data.data_ID, time, voltage FROM sensor_data INNER JOIN voltage_data ON sensor_data.data_ID = voltage_data.data_ID",
             |(data_id, time, voltage)| {
                 Voltage {
@@ -69,16 +134,47 @@ impl DatabaseConnection {
         Ok(result)
     }
 
-    pub async fn gyro(&mut self) -> Result<Vec<GpsData>, mysql::Error> {
-        let result: Vec<GpsData> = self.conn.query_map(
+    pub async fn gyro(&mut self) -> Result<Vec<GyroData>, mysql::Error> {
+        let mut conn = self.conn.lock()?;
+        let result: Vec<GyroData> = conn.query_map(
             "SELECT sensor_data.data_ID, time, gyro_x, gyro_y, gyro_z from sensor_data 
             INNER JOIN gyroscope_data on sensor_data.data_ID = gyroscope_data.data_ID",
-            |(data_id, time, gyro_x, gyro_y, gyro_z)| GpsData {
+            |(data_id, time, gyro_x, gyro_y, gyro_z)| GyroData {
                 data_id,
                 time,
                 gyro_x,
                 gyro_y,
                 gyro_z,
+            },
+        )?;
+        Ok(result)
+    }
+
+    pub async fn gps(&mut self) -> Result<Vec<GpsData>, mysql::Error> {
+        let mut conn = self.conn.lock()?;
+        let result: Vec<GpsData> = conn.query_map(
+            "SELECT sensor_data.data_ID, time, gps_lat, gps_long from sensor_data 
+            INNER JOIN gps_data on sensor_data.data_ID = gps_data.data_ID",
+            |(data_id, time, gps_lat, gps_long)| GpsData {
+                data_id,
+                time,
+                gps_lat,
+                gps_long,
+            },
+        )?;
+        Ok(result)
+    }
+    pub async fn acc(&mut self) -> Result<Vec<AccData>, mysql::Error> {
+        let mut conn = self.conn.lock()?;
+        let result: Vec<AccData> = conn.query_map(
+            "SELECT sensor_data.data_ID , time, acc_x, acc_y, acc_z from sensor_data 
+            INNER JOIN acceleration_data on sensor_data.data_ID = acceleration_data.data_ID",
+            |(data_id, time, acc_x, acc_y, acc_z)| AccData {
+                data_id,
+                time,
+                acc_x,
+                acc_y,
+                acc_z,
             },
         )?;
         Ok(result)
