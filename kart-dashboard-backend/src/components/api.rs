@@ -1,9 +1,10 @@
+use actix_cors::Cors;
 use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 use serde::ser::{Serialize, SerializeStruct, Serializer};
 use std::env;
 
 use super::{
-    database::{AllData, DatabaseConnection, Voltage, GyroData, GpsData, AccData},
+    database::{AccData, AllData, DatabaseConnection, GpsData, GyroData, Voltage},
     logger::Logger,
 };
 
@@ -129,6 +130,7 @@ impl ApiEndpoints {
 
         HttpServer::new(move || {
             App::new()
+                .wrap(Cors::permissive())
                 .service(hello)
                 .service(all)
                 .service(voltage)
