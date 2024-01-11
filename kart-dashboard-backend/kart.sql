@@ -31,8 +31,8 @@ CREATE INDEX idx_data_ID ON `sensor_data` (`data_ID`);
 
 CREATE TABLE gps_data(
   `data_ID` int(11) NOT NULL,
-  `gps_lat` decimal NOT NULL,
-  `gps_long` decimal NOT NULL,
+  `gps_lat` FLOAT NOT NULL,
+  `gps_long` FLOAT NOT NULL,
   PRIMARY KEY (`data_ID`),
   FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`)
 );
@@ -50,9 +50,9 @@ CREATE TABLE acceleration_data (
 -- Table for gyroscope data
 CREATE TABLE gyroscope_data (
   `data_ID` int(11) NOT NULL,
-  `gyro_x` decimal NOT NULL,
-  `gyro_y` decimal NOT NULL,
-  `gyro_z` decimal NOT NULL,
+  `gyro_x` FLOAT NOT NULL,
+  `gyro_y` FLOAT NOT NULL,
+  `gyro_z` FLOAT NOT NULL,
   PRIMARY KEY (`data_ID`),
   FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`)
 );
@@ -60,7 +60,7 @@ CREATE TABLE gyroscope_data (
 -- Table for voltage data (assuming one voltage reading per sensor data entry)
 CREATE TABLE voltage_data (
   `data_ID` int(11) NOT NULL,
-  `voltage` decimal NOT NULL,
+  `voltage` FLOAT NOT NULL,
   PRIMARY KEY (`data_ID`),
   FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`)
 );
