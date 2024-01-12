@@ -13,17 +13,17 @@ log.Info("Front-end started");
 // Connect to the database
 const bc = new BackendConnection();
 //fetches data for charts
-const UserData = await bc.GetAllData();
+const UserData = await bc.GetSpecific(1698913485, 1698913638);
 
 
 //variable to compare voltage use
-var compare = 25;
+let compare = 25;
 
 
 // Fetch all data
 async function fetchData() {
   try {
-    const receivedData = await bc.GetAllData();
+    const receivedData = await bc.GetSpecific(1698913485, 1698913638);
     return receivedData;
   } catch (error) {
     log.error('Error fetching data:', error);
@@ -93,20 +93,25 @@ function App() {
     },
   };
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+  }
+
   function timeConverter(timestamp) {
-    var a = new Date(timestamp * 1000);
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var year = a.getFullYear();
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+    let a = new Date(timestamp * 1000);
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+    let sec = a.getSeconds();
+    let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
     return time;
   }
   function voltUsage(volt) {
-    var usage = compare - volt;
+    let usage = compare - volt;
     if (usage < 0) {
       compare = volt
       return 25 - volt;
@@ -276,22 +281,18 @@ function App() {
         <div className='sidebar'>
           <h2>Select your time and date:</h2>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <label for="Date">Date: </label>
             <input type="Date" id="Date" name="Date"></input>
-          </form>
 
-          <form>
             <label for="start-time">Start time: </label>
             <input id="start-time" type="time" name="start-time" step="2" />
-          </form>
 
-          <form>
             <label for="end-time">End time: </label>
             <input id="end-time" type="time" name="end-time" step="2" />
-          </form>
 
-          <button id='add'>Confirm</button>
+            <input type="submit" value="Confirm" />
+          </form>
         </div>
 
         <div className='blocks'>
