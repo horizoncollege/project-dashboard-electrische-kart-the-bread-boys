@@ -137,6 +137,7 @@ impl ApiEndpoints {
                 .service(gyro)
                 .service(gps)
                 .service(acc)
+                .service(specific)
                 .route("/hey", web::get().to(manual_hello))
         })
         .workers(self.cpu_threads)
@@ -170,6 +171,26 @@ async fn gps() -> impl Responder {
     };
 
     println!("Handling /GPS endpoint");
+
+    HttpResponse::Ok().json(data)
+}
+
+#[get("/SPECIFIC/{start_time}/{end_time}")]
+async fn specific(path: web::Path<(String, String)>) -> impl Responder {
+    let start_time: i64 = path.0.clone().parse().unwrap();
+    let end_time: i64 = path.1.clone().parse().unwrap();
+
+    let db = getconnection().await;
+
+    let data = match db.specific(start_time, end_time).await {
+        Ok(data) => data,
+        Err(err) => {
+            eprintln!("{}", err);
+            panic!()
+        }
+    };
+
+    println!("Handling /SPECIFIC endpoint");
 
     HttpResponse::Ok().json(data)
 }
