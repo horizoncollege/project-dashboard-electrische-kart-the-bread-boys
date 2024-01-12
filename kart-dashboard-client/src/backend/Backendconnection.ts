@@ -41,7 +41,7 @@ export default class BackendConnection {
     }
 
     // Get all data from api
-    async GetAllData() {
+    public async GetAllData() {
         this.log.Info("Collecting all data from api");
         // Format url
         const response = await fetch(`http://${this.hostname}:${this.port}/ALL`);
@@ -51,7 +51,7 @@ export default class BackendConnection {
         return data;
     }
     // Get voltage data from api
-    async GetVolTage() {
+    public async GetVolTage() {
         this.log.Info("Collecting all data from api");
         // Format url
         const response = await fetch(`http://${this.hostname}:${this.port}/VOLTAGE`);
@@ -61,7 +61,7 @@ export default class BackendConnection {
         return data;
     }
     // Get acceleration data from api
-    async GetAcceleration() {
+    public async GetAcceleration() {
         this.log.Info("Collecting all data from api");
         // Format url
         const response = await fetch(`http://${this.hostname}:${this.port}/ACCELERATION`);
@@ -71,7 +71,7 @@ export default class BackendConnection {
         return data;
     }
     // Get gps data from api
-    async GetGps() {
+    public async GetGps() {
         this.log.Info("Collecting all data from api");
         // Format url
         const response = await fetch(`http://${this.hostname}:${this.port}/GPS`);
@@ -81,7 +81,7 @@ export default class BackendConnection {
         return data;
     }
     // Get gyroscope data from api
-    async GetGyroscope() {
+    public async GetGyroscope() {
         this.log.Info("Collecting all data from api");
         // Format url
         const response = await fetch(`http://${this.hostname}:${this.port}/GYRO`);
@@ -89,5 +89,35 @@ export default class BackendConnection {
         const data = await response.json();
         // Return the result
         return data;
+    }
+
+    // Get all, but specific data based on time from api
+    public async GetSpecific(start_time: number, end_time: number) {
+        this.log.Info("Collecting all data from api");
+        // Format url
+        const response = await fetch(`http://${this.hostname}:${this.port}/SPECIFIC/${start_time}/${end_time}`);
+        // Convert it to json
+        const data = await response.json();
+        // Return the result
+        return data;
+    }
+
+    // Convert normal human readable time to unix timestamp
+    public ConvertDateTimeToUnix(date: string, HoursSeconds: string): number | null {
+        // Concatenate date and time strings
+        const dateTimeString = `${date} ${HoursSeconds}`;
+
+        // Parse the concatenated string into a Date object
+        const dateTime = new Date(dateTimeString);
+
+        // Check if the Date object is valid
+        if (isNaN(dateTime.getTime())) {
+            console.error('Invalid date or time format');
+            return null;
+        }
+
+        const unixTimestamp = dateTime.getTime();
+
+        return unixTimestamp;
     }
 }

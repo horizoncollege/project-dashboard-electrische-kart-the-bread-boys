@@ -118,6 +118,45 @@ impl DatabaseConnection {
         Ok(result)
     }
 
+    pub async fn specific(
+        &self,
+        start_time: i64,
+        end_time: i64,
+    ) -> Result<Vec<AllData>, mysql::Error> {
+        self.log.info("Executing query to fetch all data");
+
+        let mut conn = self.conn.lock()?;
+
+        let result: Vec<AllData> = conn.query_map(format!(
+            "
+            SELECT sensor_data.data_ID, time, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, voltage
+            FROM sensor_data
+            INNER JOIN voltage_data ON sensor_data.data_ID = voltage_data.data_ID 
+            INNER JOIN gyroscope_data ON sensor_data.data_ID = gyroscope_data.data_ID 
+            INNER JOIN acceleration_data ON sensor_data.data_ID = acceleration_data.data_ID
+            INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID
+            WHERE time BETWEEN {} AND {}", start_time, end_time),
+            |(data_id, time, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, voltage)| {
+                AllData {
+                    data_id,
+                    time,
+                    gps_lat,
+                    gps_long,
+                    acc_x,
+                    acc_y,
+                    acc_z,
+                    gyro_x,
+                    gyro_y,
+                    gyro_z,
+                    voltage,
+                }
+            },
+        )?;
+
+        self.log.info("Query executed successfully");
+        Ok(result)
+    }
+
     pub async fn voltage(&mut self) -> Result<Vec<Voltage>, mysql::Error> {
         let mut conn = self.conn.lock()?;
         let result: Vec<Voltage> = conn.query_map(
