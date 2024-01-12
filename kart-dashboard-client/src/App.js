@@ -13,29 +13,50 @@ log.Info("Front-end started");
 // Connect to the database
 const bc = new BackendConnection();
 //fetches data for charts
-const UserData = await bc.GetSpecific(1698913485, 1698913638);
-
+let UserData = await fetchData(false);
 
 //variable to compare voltage use
 let compare = 25;
 
+// This will handle the user's input for the time and date to get the specific data
+async function handleDataFromForum(StartTime, EndTime) {
+  UserData = await fetchData(true, StartTime, EndTime);
+}
 
 // Fetch all data
-async function fetchData() {
+async function fetchData(specific, StartTime, EndTime) {
   try {
-    const receivedData = await bc.GetSpecific(1698913485, 1698913638);
-    return receivedData;
+    // Check if user wants specific data or all the data
+    if (specific) {
+      const receivedData = await bc.GetSpecific(StartTime, EndTime);
+      return receivedData;
+    } else {
+      const receivedData = await bc.GetAllData();
+      return receivedData;
+    }
   } catch (error) {
-    log.error('Error fetching data:', error);
+    log.Error('Error fetching data:', error);
     return [];
   }
 }
 
 function App() {
   // Use state so it can update live
-  const [data, setData] = React.useState([]);
+  function handeTimeForum(e) {
+    e.preventDefault();
+    const StartTime = bc.ConvertDateTimeToUnix(startDate, startTime);
+    const EndTime = bc.ConvertDateTimeToUnix(startDate, endTime);
+    handleDataFromForum(StartTime, EndTime);
+  }
+
+  const [, setData] = React.useState([]);
+
+  // Handle time
+  const [startDate, setStartDate] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
   // BarChart
-  const [speedData, setUserData] = useState({
+  const [speedData] = useState({
     labels: UserData.map((data) => timeConverter(data.time)),
     datasets: [
       {
@@ -93,10 +114,6 @@ function App() {
     },
   };
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-  }
 
   function timeConverter(timestamp) {
     let a = new Date(timestamp * 1000);
@@ -223,7 +240,6 @@ function App() {
           }
         }
       },
-      responsive: true,
       scales: {
         y: {
           type: 'linear',
@@ -281,15 +297,35 @@ function App() {
         <div className='sidebar'>
           <h2>Select your time and date:</h2>
 
-          <form onSubmit={handleSubmit}>
-            <label for="Date">Date: </label>
-            <input type="Date" id="Date" name="Date"></input>
+          <form onSubmit={handeTimeForum}>
+            <label htmlFor="Date">Date: </label>
+            <input
+              type="Date"
+              id="Date"
+              name="Date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
 
-            <label for="start-time">Start time: </label>
-            <input id="start-time" type="time" name="start-time" step="2" />
+            <label htmlFor="start-time">Start time: </label>
+            <input
+              id="start-time"
+              type="time"
+              name="start-time"
+              step="2"
+              value={startTime}
+              onChange={(e) => setStartTime(e.target.value)}
+            />
 
-            <label for="end-time">End time: </label>
-            <input id="end-time" type="time" name="end-time" step="2" />
+            <label htmlFor="end-time">End time: </label>
+            <input
+              id="end-time"
+              type="time"
+              name="end-time"
+              step="2"
+              value={endTime}
+              onChange={(e) => setEndTime(e.target.value)}
+            />
 
             <input type="submit" value="Confirm" />
           </form>
