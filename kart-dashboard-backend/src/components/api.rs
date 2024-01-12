@@ -1,7 +1,7 @@
 use actix_cors::Cors;
 use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 use serde::ser::{Serialize, SerializeStruct, Serializer};
-use std::env;
+use std::{env, num::ParseIntError};
 
 use super::{
     database::{AccData, AllData, DatabaseConnection, GpsData, GyroData, Voltage},
@@ -137,6 +137,7 @@ impl ApiEndpoints {
                 .service(gyro)
                 .service(gps)
                 .service(acc)
+                .service(specific)
                 .route("/hey", web::get().to(manual_hello))
         })
         .workers(self.cpu_threads)
@@ -172,6 +173,32 @@ async fn gps() -> impl Responder {
     println!("Handling /GPS endpoint");
 
     HttpResponse::Ok().json(data)
+}
+
+#[get("/SPECIFIC/{start_time}/{end_time}")]
+async fn specific(path: web::Path<(String, String)>) -> impl Responder {
+    let start_time: Result<i64, ParseIntError> = path.0.clone().parse();
+    let end_time: Result<i64, ParseIntError> = path.1.clone().parse();
+
+    match (start_time, end_time) {
+        (Ok(start), Ok(end)) => {
+            let db = getconnection().await;
+            let data = match db.specific(start, end).await {
+                Ok(data) => data,
+                Err(err) => {
+                    eprintln!("{}", err);
+                    return HttpResponse::InternalServerError().body("Internal Server Error");
+                }
+            };
+
+            println!("Handling /SPECIFIC endpoint");
+            HttpResponse::Ok().json(data)
+        }
+        (_, _) => {
+            // Parsing failed, return a bad request response
+            HttpResponse::BadRequest().body("Invalid start_time or end_time format")
+        }
+    }
 }
 
 #[get("/GYRO")]
