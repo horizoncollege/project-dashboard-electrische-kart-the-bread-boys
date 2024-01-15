@@ -21,6 +21,7 @@ let compare = 25;
 // This will handle the user's input for the time and date to get the specific data
 async function handleDataFromForum(StartTime, EndTime) {
   UserData = await fetchData(true, StartTime, EndTime);
+  console.log(UserData);
 }
 
 // Fetch all data

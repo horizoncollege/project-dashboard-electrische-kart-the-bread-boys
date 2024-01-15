@@ -116,8 +116,18 @@ export default class BackendConnection {
             return null;
         }
 
-        const unixTimestamp = dateTime.getTime();
+        // Ensure the date and time are valid, considering leap years
+        if (
+            dateTime.getFullYear() < 1000 ||
+            isNaN(dateTime.getMilliseconds())
+        ) {
+            console.error('Invalid date or time');
+            return null;
+        }
+
+        const unixTimestamp = Math.floor(dateTime.getTime() / 1000); // Convert to seconds
 
         return unixTimestamp;
     }
+
 }
