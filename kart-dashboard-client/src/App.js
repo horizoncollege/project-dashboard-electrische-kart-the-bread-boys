@@ -114,6 +114,14 @@ function App() {
     },
   };
 
+<<<<<<< Updated upstream
+=======
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+
+  }
+>>>>>>> Stashed changes
 
   function timeConverter(timestamp) {
     let a = new Date(timestamp * 1000);
