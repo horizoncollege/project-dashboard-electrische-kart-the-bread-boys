@@ -93,7 +93,7 @@ export default class BackendConnection {
 
     // Get all, but specific data based on time from api
     public async GetSpecific(start_time: number, end_time: number) {
-        this.log.Info("Collecting all data from api");
+        this.log.Info(`Collecting data between ${start_time} and ${end_time}`);
         // Format url
         const response = await fetch(`http://${this.hostname}:${this.port}/SPECIFIC/${start_time}/${end_time}`);
         // Convert it to json
