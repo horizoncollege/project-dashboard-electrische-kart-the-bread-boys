@@ -73,6 +73,8 @@ The currently defined the follow urls:
 
 ```http://example:port/GYRO```: It will show all the gyro data
 
+```http://example:port/SPECIFIC/START_TIME/END_TIME```: It will show specific data between time based on unix time
+
 
 #### Functions
 
@@ -94,3 +96,10 @@ GetGps() // It will fetch all the gps latitude and longitude data and parse it i
 ```ts
 GetGyroscope() // It will fetch all rotations and parse it into a json object
 ```
+```ts
+GetSpecific(startTime: number, endTime: number) // it will fetch specific data
+```
+
+### Issues
+
+Front-end time filters does not get updated when a filter is set
