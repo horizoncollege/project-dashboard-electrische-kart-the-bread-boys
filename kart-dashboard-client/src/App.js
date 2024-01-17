@@ -248,90 +248,7 @@ function App() {
     },
   };
 
-  function timeConverter(timestamp) {
-    let a = new Date(timestamp * 1000);
-    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    let year = a.getFullYear();
-    let month = months[a.getMonth()];
-    let date = a.getDate();
-    let hour = a.getHours();
-    let min = a.getMinutes();
-    let sec = a.getSeconds();
-    let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
-    return time;
-  }
-  function voltUsage(volt) {
-    let usage = compare - volt;
-    if (usage < 0) {
-      compare = volt
-      return 25 - volt;
-    } else {
-      compare = volt;
-      return usage
-    }
-  }
-  const [voltData] = useState({
-    labels: UserData.map((data) => timeConverter(data.time)),
-    datasets: [
-      {
-        label: "Battery",
-        data: UserData.map((data) => data.voltage),
-        backgroundColor: [
-          "rgba(0, 194, 255, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-        yAxisID: 'y',
-      },
-      {
-        label: "Voltage usage",
-        data: UserData.map((data) => voltUsage(data.voltage)),
-        backgroundColor: [
-          "rgba(255, 184, 0, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-        yAxisID: 'right',
-      }
-    ]
-  }
-  );
-
-  const [gyroData] = useState({
-    labels: UserData.map((data) => timeConverter(data.time)),
-    datasets: [
-      {
-        label: "X-axis",
-        data: UserData.map((data) => data.gyro_x),
-        backgroundColor: [
-          "rgba(0, 194, 255, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-      {
-        label: "Y-axis",
-        data: UserData.map((data) => data.gyro_y),
-        backgroundColor: [
-          "rgba(255, 184, 0, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-      {
-        label: "Z-axis",
-        data: UserData.map((data) => data.gyro_z),
-        backgroundColor: [
-          "rgba(218, 77, 77, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ]
-  }
-  );
-
-  const volt = {
+  const gyro = {
     options: {
       responsive: true,
       maintainAspectRatio: false,
@@ -451,7 +368,7 @@ function App() {
               onChange={(e) => setEndTime(e.target.value)}
             />
 
-            <input type="submit" onClick={handeTimeForum} value="Reset" />
+            <input id='add' type="submit" onClick={handeTimeForum} value="Reset" />
 
           </form>
         </div>
