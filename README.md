@@ -21,7 +21,7 @@ Niek
 
 ## Setup database
 
-1. Install MySQL or MariaDB
+1. Install MySQL or MariaDB and [Rustup](https://www.rust-lang.org/tools/install) with at least the Windows 10 or Windows 11 SDK or just the script on Linux.
 2. import in kart-dashboard-backend/kart.sql into SQL
 3. Check if the info in kart-dashboard-backend/.env is correct
 4. Run in the root of the project ```npm run setup-dashboard``` it will install all the dependencies
@@ -102,4 +102,4 @@ GetSpecific(startTime: number, endTime: number) // it will fetch specific data
 
 ### Issues
 
-Front-end time filters does not get updated when a filter is set
+...
