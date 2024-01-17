@@ -202,7 +202,14 @@ function App() {
       }
     };
 
+    // Fetch first
     fetchDataAndSetState();
+
+    // Set up an interval to fetch data every second
+    const intervalId = setInterval(fetchDataAndSetState, 1000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
   }, [startDate, startTime, endTime]);
 
   // Options for the chars for styling
