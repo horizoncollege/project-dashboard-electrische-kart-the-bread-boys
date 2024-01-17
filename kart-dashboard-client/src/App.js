@@ -368,7 +368,7 @@ function App() {
               onChange={(e) => setEndTime(e.target.value)}
             />
 
-            <input type="submit" onClick={handeTimeForum} value="Reset" />
+            <input id='add' type="submit" onClick={handeTimeForum} value="Reset" />
 
           </form>
         </div>
