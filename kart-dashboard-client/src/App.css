@@ -62,9 +62,9 @@ nav {
   margin-bottom: 9%;
 }
 
-#date {
+/* #date {
   margin-top: 1%;
-}
+} */
 
 select {
   font-size: calc(8px + 0.6vw);
@@ -264,4 +264,22 @@ footer {
   background-color: #223e68;
   padding: 1%;
   filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+#Date,
+#start-time,
+#end-time {
+  background-color: #5372a1;
+  color: #ffffff;
+  font-size: 1vw;
+  width: calc(50px + 10vw);
+  height: calc(10px + 1.5vw);
+  border-radius: 0.5vw;
+  
 }
