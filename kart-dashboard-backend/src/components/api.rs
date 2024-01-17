@@ -8,6 +8,7 @@ use super::{
     logger::Logger,
 };
 
+// Serializers for the json format
 impl Serialize for Voltage {
     fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
     where
@@ -86,6 +87,7 @@ impl Serialize for GyroData {
     }
 }
 
+// Required data for the api end points
 pub struct ApiEndpoints {
     hostname: String,
     port: i32,
@@ -95,6 +97,7 @@ pub struct ApiEndpoints {
 }
 
 impl ApiEndpoints {
+    // Constructor to get the required info from .env
     pub async fn new() -> Self {
         let hostname = env::var("HOSTNAME").expect("Expected a HOSTNAME in the environment");
         let port_string = env::var("HOST_PORT").expect("Expected a HOST_PORT in the environment");
@@ -123,11 +126,15 @@ impl ApiEndpoints {
         }
     }
 
+    // Start listening for any incoming requests
     pub async fn start_listening(self) -> std::io::Result<()> {
+        // Format the url
         let addr = format!("{}:{}", self.hostname, self.port);
+        // Show user what url and port the api is listening at
         self.log
             .info(format!("Listening at http://{}", addr).as_str());
 
+        // Create the api endpoints with their functionality
         HttpServer::new(move || {
             App::new()
                 .wrap(Cors::permissive())
@@ -140,13 +147,14 @@ impl ApiEndpoints {
                 .service(specific)
                 .route("/hey", web::get().to(manual_hello))
         })
-        .workers(self.cpu_threads)
+        .workers(self.cpu_threads) // Apply the amount of cpu threads
         .bind(addr)?
         .run()
         .await
     }
 }
 
+// Connect to the database
 async fn getconnection() -> DatabaseConnection {
     let db = match DatabaseConnection::new().await {
         Ok(connection) => connection,
@@ -158,10 +166,13 @@ async fn getconnection() -> DatabaseConnection {
     return db;
 }
 
+// Url end points
 #[get("/GPS")]
 async fn gps() -> impl Responder {
+    // Connect to the database
     let mut db = getconnection().await;
 
+    // Fetch the data
     let data = match db.gps().await {
         Ok(data) => data,
         Err(err) => {
@@ -172,17 +183,22 @@ async fn gps() -> impl Responder {
 
     println!("Handling /GPS endpoint");
 
+    // Return the data in json format through http
     HttpResponse::Ok().json(data)
 }
 
 #[get("/SPECIFIC/{start_time}/{end_time}")]
 async fn specific(path: web::Path<(String, String)>) -> impl Responder {
+    // Parse the start time and end time into i64(int 64 bits) unix time and check if no invalid format is used
     let start_time: Result<i64, ParseIntError> = path.0.clone().parse();
     let end_time: Result<i64, ParseIntError> = path.1.clone().parse();
 
+    // Handle any input errors
     match (start_time, end_time) {
         (Ok(start), Ok(end)) => {
+            // Connect to the database
             let db = getconnection().await;
+            // Fetch the data
             let data = match db.specific(start, end).await {
                 Ok(data) => data,
                 Err(err) => {
@@ -192,6 +208,7 @@ async fn specific(path: web::Path<(String, String)>) -> impl Responder {
             };
 
             println!("Handling /SPECIFIC endpoint");
+            // Return data as json into http
             HttpResponse::Ok().json(data)
         }
         (_, _) => {
@@ -201,10 +218,13 @@ async fn specific(path: web::Path<(String, String)>) -> impl Responder {
     }
 }
 
+// Handle gyro endpoint
 #[get("/GYRO")]
 async fn gyro() -> impl Responder {
+    // Connect to the database
     let mut db = getconnection().await;
 
+    // Fetch the data
     let data = match db.gyro().await {
         Ok(data) => data,
         Err(err) => {
@@ -215,13 +235,16 @@ async fn gyro() -> impl Responder {
 
     println!("Handling /GYRO endpoint");
 
+    // Return data as json into http
     HttpResponse::Ok().json(data)
 }
 
 #[get("/ACCELERATION")]
 async fn acc() -> impl Responder {
+    // Connect to the database
     let mut db = getconnection().await;
 
+    // Fetch the data
     let data = match db.acc().await {
         Ok(data) => data,
         Err(err) => {
@@ -232,11 +255,13 @@ async fn acc() -> impl Responder {
 
     println!("Handling /ACCELERATION endpoint");
 
+    // Return data as json into http
     HttpResponse::Ok().json(data)
 }
 
 #[get("/VOLTAGE")]
 async fn voltage() -> impl Responder {
+    // Connect to the database
     let mut db = getconnection().await;
 
     let data = match db.voltage().await {
@@ -248,14 +273,17 @@ async fn voltage() -> impl Responder {
     };
 
     println!("Handling /VOLTAGE endpoint");
-
+    
+    // Return data as json into http
     HttpResponse::Ok().json(data)
 }
 
 #[get("/ALL")]
 async fn all() -> impl Responder {
+    // Connect to the database
     let db = getconnection().await;
 
+    // Fetch the data
     let data = match db.all_data().await {
         Ok(data) => data,
         Err(err) => {
@@ -266,14 +294,17 @@ async fn all() -> impl Responder {
 
     println!("Handling /ALL endpoint");
 
+    // Return data as json into http
     HttpResponse::Ok().json(data)
 }
 
+// Confirmation that the backend is successfully connected
 #[get("/")]
 async fn hello() -> impl Responder {
     HttpResponse::Ok().json("Hello, this is the backend!")
 }
 
+// Test api end point
 async fn manual_hello() -> impl Responder {
     HttpResponse::Ok().json("Hey there!")
 }

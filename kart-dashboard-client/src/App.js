@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import BackendConnection from './backend/Backendconnection.ts';
 import Logger from './backend/logger.ts';
@@ -12,170 +12,211 @@ log.Info("Front-end started");
 
 // Connect to the database
 const bc = new BackendConnection();
-//fetches data for charts
-const UserData = await bc.GetAllData();
-
 
 //variable to compare voltage use
-var compare = 25;
+let compare = 25;
 
+
+// Convert unix time to normal time
+function timeConverter(timestamp) {
+  const a = new Date(timestamp * 1000);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const year = a.getFullYear();
+  const month = months[a.getMonth()];
+  const date = a.getDate();
+  const hour = a.getHours();
+  const min = a.getMinutes();
+  const sec = a.getSeconds();
+  const time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+  return time;
+}
+
+
+function voltUsage(volt) {
+  let usage = compare - volt;
+  if (usage < 0) {
+    compare = volt
+    return 25 - volt;
+  } else {
+    compare = volt;
+    return usage
+  }
+}
+
+// This will handle the user's input for the time and date to get the specific data
+// async function handleDataFromForum(StartTime, EndTime) {
+//   const UserData = await fetchData(true, StartTime, EndTime);
+//   return UserData;
+// }
 
 // Fetch all data
-async function fetchData() {
+async function fetchData(specific, StartTime, EndTime) {
   try {
-    const receivedData = await bc.GetAllData();
-    return receivedData;
+    // Check if user wants specific data or all the data
+    if (specific) {
+      const receivedData = await bc.GetSpecific(StartTime, EndTime);
+      return receivedData;
+    } else {
+      const receivedData = await bc.GetAllData();
+      return receivedData;
+    }
   } catch (error) {
-    log.error('Error fetching data:', error);
+    log.Error('Error fetching data:', error);
     return [];
   }
 }
 
 function App() {
+  const [UserData, setUserData] = useState([]);
+  const [startDate, setStartDate] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
+
   // Use state so it can update live
-  const [data, setData] = React.useState([]);
-  // BarChart
-  const [speedData, setUserData] = useState({
-    labels: UserData.map((data) => timeConverter(data.time)),
-    datasets: [
-      {
-        label: "Top speed",
-        data: UserData.map((data) => data.gyro_x),
-        backgroundColor: [
-          "rgba(0, 194, 255, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-      {
-        label: "Average speed",
-        data: UserData.map((data) => data.gyro_y),
-        backgroundColor: [
-          "rgba(255, 184, 0, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-      {
-        label: "Speed",
-        data: UserData.map((data) => data.gyro_z),
-        backgroundColor: [
-          "rgba(218, 77, 77, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ],
+  async function handeTimeForum(e) {
+    e.preventDefault();
+
+    setStartDate("");
+    setStartTime("");
+    setEndTime("");
+
+    log.Info(`User set ${startDate} to filter`);
+    log.Info(`User set ${startTime} to filter`);
+    log.Info(`User set ${endTime} to filter`);
+  }
+
+  const [speedData, setSpeedData] = useState({
+    labels: [],
+    datasets: [],
   });
 
-  const speed = {
-    options: {
-      plugins: {
-        legend: {
-          labels: {
-            color: "white",
-          }
+  const [voltData, setVoltageData] = useState({
+    labels: [],
+    datasets: [],
+  });
+
+  const [gyroData, setGyroData] = useState({
+    labels: [],
+    datasets: [],
+  });
+
+  React.useEffect(() => {
+    const fetchDataAndSetState = async () => {
+      try {
+        let receivedData = [];
+
+        // Check if all the dates are set
+        if (startDate === "" || startTime === "" || endTime === "") {
+          // Fetch all data
+          receivedData = await fetchData();
+          console.log(`${startDate} ${startTime} ${endTime}`);
+          log.Info("Fetching all");
+        } else {
+          // Fetch specific data
+          log.Info("Fetching specific");
+          const start_time = bc.ConvertDateTimeToUnix(startDate, startTime);
+          const end_time = bc.ConvertDateTimeToUnix(startDate, endTime);
+          log.Info(`Start time: ${start_time}. End time: ${end_time}.`);
+          receivedData = await fetchData(true, start_time, end_time);
         }
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          type: 'linear',
-          display: true,
-          position: 'left',
-          ticks: { color: "white", beginAtZero: true }
-        },
-        x: {
-          ticks: { color: 'white', beginAtZero: true }
-        },
-      },
-    },
-  };
+        console.log('Received Data:', receivedData);
+        setUserData(receivedData);
 
-  function timeConverter(timestamp) {
-    var a = new Date(timestamp * 1000);
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var year = a.getFullYear();
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
-    return time;
-  }
-  function voltUsage(volt) {
-    var usage = compare - volt;
-    if (usage < 0) {
-      compare = volt
-      return 25 - volt;
-    } else {
-      compare = volt;
-      return usage
-    }
-  }
-  const [voltData] = useState({
-    labels: UserData.map((data) => timeConverter(data.time)),
-    datasets: [
-      {
-        label: "Battery",
-        data: UserData.map((data) => data.voltage),
-        backgroundColor: [
-          "rgba(0, 194, 255, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-        yAxisID: 'y',
-      },
-      {
-        label: "Voltage usage",
-        data: UserData.map((data) => voltUsage(data.voltage)),
-        backgroundColor: [
-          "rgba(255, 184, 0, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-        yAxisID: 'right',
+        // Define all the data of the charts
+        const speedChartData = {
+          labels: receivedData.map((data) => timeConverter(data.time)),
+          datasets: [
+            {
+              label: "Top speed",
+              data: receivedData.map((data) => data.gyro_x),
+              backgroundColor: ["rgba(0, 194, 255, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+            },
+            {
+              label: "Average speed",
+              data: receivedData.map((data) => data.gyro_y),
+              backgroundColor: ["rgba(255, 184, 0, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+            },
+            {
+              label: "Speed",
+              data: receivedData.map((data) => data.gyro_z),
+              backgroundColor: ["rgba(218, 77, 77, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+            },
+          ],
+        };
+        setSpeedData(speedChartData);
+
+        const voltChartData = {
+          labels: receivedData.map((data) => timeConverter(data.time)),
+          datasets: [
+            {
+              label: "Battery",
+              data: receivedData.map((data) => data.voltage),
+              backgroundColor: ["rgba(0, 194, 255, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+              yAxisID: 'y',
+            },
+            {
+              label: "Voltage usage",
+              data: receivedData.map((data) => voltUsage(data.voltage)),
+              backgroundColor: ["rgba(255, 184, 0, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+              yAxisID: 'right',
+            },
+          ],
+        };
+        setVoltageData(voltChartData);
+
+        const gyroChartData = {
+          labels: receivedData.map((data) => timeConverter(data.time)),
+          datasets: [
+            {
+              label: "X-axis",
+              data: receivedData.map((data) => data.gyro_x),
+              backgroundColor: ["rgba(0, 194, 255, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+            },
+            {
+              label: "Y-axis",
+              data: receivedData.map((data) => data.gyro_y),
+              backgroundColor: ["rgba(255, 184, 0, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+            },
+            {
+              label: "Z-axis",
+              data: receivedData.map((data) => data.gyro_z),
+              backgroundColor: ["rgba(218, 77, 77, 1)"],
+              borderColor: "black",
+              borderWidth: 2,
+            },
+          ],
+        };
+        setGyroData(gyroChartData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
       }
-    ]
-  }
-  );
+    };
 
-  const [gyroData] = useState({
-    labels: UserData.map((data) => timeConverter(data.time)),
-    datasets: [
-      {
-        label: "X-axis",
-        data: UserData.map((data) => data.gyro_x),
-        backgroundColor: [
-          "rgba(0, 194, 255, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-      {
-        label: "Y-axis",
-        data: UserData.map((data) => data.gyro_y),
-        backgroundColor: [
-          "rgba(255, 184, 0, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-      {
-        label: "Z-axis",
-        data: UserData.map((data) => data.gyro_z),
-        backgroundColor: [
-          "rgba(218, 77, 77, 1)",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ]
-  }
-  );
+    // Fetch first
+    fetchDataAndSetState();
 
+    // Set up an interval to fetch data every second
+    const intervalId = setInterval(fetchDataAndSetState, 1000);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [startDate, startTime, endTime]);
+
+  // Options for the chars for styling
   const volt = {
     options: {
       plugins: {
@@ -218,7 +259,6 @@ function App() {
           }
         }
       },
-      responsive: true,
       scales: {
         y: {
           type: 'linear',
@@ -233,12 +273,35 @@ function App() {
     },
   };
 
-  // Wait for an update and then fetch the data
-  React.useEffect(() => {
-    fetchData().then((receivedData) => {
-      setData(receivedData);
-    });
-  }, []);
+  const speed = {
+    options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: "white",
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          ticks: { color: "white", beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white', beginAtZero: true }
+        },
+      },
+    },
+  };
+
+  // Update the data variables when it got fetched
+  useEffect(() => {
+  }, [UserData, speedData, voltData, gyroData]);
+
 
   return (
     <div className="App">
@@ -275,23 +338,39 @@ function App() {
       <div className='content-container'>
         <div className='sidebar'>
           <h2>Select your time and date:</h2>
+          <form onSubmit={handeTimeForum}>
+            <label htmlFor="Date">Date: </label>
+            <input
+              type="Date"
+              id="Date"
+              name="Date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
 
-          <form>
-            <label for="Date">Date: </label>
-            <input type="Date" id="Date" name="Date"></input>
+            <label htmlFor="start-time">Start time: </label>
+            <input
+              id="start-time"
+              type="time"
+              name="start-time"
+              step="2"
+              value={startTime}
+              onChange={(e) => setStartTime(e.target.value)}
+            />
+
+            <label htmlFor="end-time">End time: </label>
+            <input
+              id="end-time"
+              type="time"
+              name="end-time"
+              step="2"
+              value={endTime}
+              onChange={(e) => setEndTime(e.target.value)}
+            />
+
+            <input type="submit" onClick={handeTimeForum} value="Reset" />
+
           </form>
-
-          <form>
-            <label for="start-time">Start time: </label>
-            <input id="start-time" type="time" name="start-time" step="2" />
-          </form>
-
-          <form>
-            <label for="end-time">End time: </label>
-            <input id="end-time" type="time" name="end-time" step="2" />
-          </form>
-
-          <button id='add'>Confirm</button>
         </div>
 
         <div className='blocks'>

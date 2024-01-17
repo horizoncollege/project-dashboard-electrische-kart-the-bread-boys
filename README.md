@@ -21,7 +21,7 @@ Niek
 
 ## Setup database
 
-1. Install MySQL or MariaDB
+1. Install MySQL or MariaDB and [Rustup](https://www.rust-lang.org/tools/install) with at least the Windows 10 or Windows 11 SDK or just the script on Linux.
 2. import in kart-dashboard-backend/kart.sql into SQL
 3. Check if the info in kart-dashboard-backend/.env is correct
 4. Run in the root of the project ```npm run setup-dashboard``` it will install all the dependencies
@@ -73,6 +73,8 @@ The currently defined the follow urls:
 
 ```http://example:port/GYRO```: It will show all the gyro data
 
+```http://example:port/SPECIFIC/START_TIME/END_TIME```: It will show specific data between time based on unix time
+
 
 #### Functions
 
@@ -94,3 +96,10 @@ GetGps() // It will fetch all the gps latitude and longitude data and parse it i
 ```ts
 GetGyroscope() // It will fetch all rotations and parse it into a json object
 ```
+```ts
+GetSpecific(startTime: number, endTime: number) // it will fetch specific data
+```
+
+### Issues
+
+...
