@@ -8,48 +8,48 @@ use std::sync::Mutex;
 pub struct AllData {
     pub data_id: i32,
     pub time: i32,
-    pub gps_lat: f32,
-    pub gps_long: f32,
-    pub acc_x: f32,
-    pub acc_y: f32,
-    pub acc_z: f32,
-    pub gyro_x: f32,
-    pub gyro_y: f32,
-    pub gyro_z: f32,
-    pub voltage: f32,
+    pub gps_lat: f64,
+    pub gps_long: f64,
+    pub acc_x: f64,
+    pub acc_y: f64,
+    pub acc_z: f64,
+    pub gyro_x: f64,
+    pub gyro_y: f64,
+    pub gyro_z: f64,
+    pub voltage: f64,
 }
 
 #[derive(Debug, PartialEq)]
 pub struct AccData {
     pub data_id: i32,
     pub time: i32,
-    pub acc_x: f32,
-    pub acc_y: f32,
-    pub acc_z: f32,
+    pub acc_x: f64,
+    pub acc_y: f64,
+    pub acc_z: f64,
 }
 
 #[derive(Debug, PartialEq)]
 pub struct GpsData {
     pub data_id: i32,
     pub time: i32,
-    pub gps_lat: f32,
-    pub gps_long: f32,
+    pub gps_lat: f64,
+    pub gps_long: f64,
 }
 
 #[derive(Debug, PartialEq)]
 pub struct Voltage {
     pub data_id: i32,
     pub time: i32,
-    pub voltage: f32,
+    pub voltage: f64,
 }
 
 #[derive(Debug, PartialEq)]
 pub struct GyroData {
     pub data_id: i32,
     pub time: i32,
-    pub gyro_x: f32,
-    pub gyro_y: f32,
-    pub gyro_z: f32,
+    pub gyro_x: f64,
+    pub gyro_y: f64,
+    pub gyro_z: f64,
 }
 
 pub struct DatabaseConnection {
