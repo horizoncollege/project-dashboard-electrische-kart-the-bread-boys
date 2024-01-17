@@ -14,7 +14,7 @@ log.Info("Front-end started");
 const bc = new BackendConnection();
 
 //variable to compare voltage use
-let compare = 25;
+let compare = 0;
 
 
 // Convert unix time to normal time
@@ -36,7 +36,7 @@ function voltUsage(volt) {
   let usage = compare - volt;
   if (usage < 0) {
     compare = volt
-    return 25 - volt;
+    return 0;
   } else {
     compare = volt;
     return usage
