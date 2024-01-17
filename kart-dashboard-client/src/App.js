@@ -76,6 +76,10 @@ function App() {
   async function handeTimeForum(e) {
     e.preventDefault();
 
+    setStartDate("");
+    setStartTime("");
+    setEndTime("");
+    
     log.Info(`User set ${startDate} to filter`);
     log.Info(`User set ${startTime} to filter`);
     log.Info(`User set ${endTime} to filter`);
@@ -365,7 +369,7 @@ function App() {
               onChange={(e) => setEndTime(e.target.value)}
             />
 
-            <input type="submit" onClick={handeTimeForum} value="Confirm" />
+            <input type="submit" onClick={handeTimeForum} value="Reset" />
           </form>
         </div>
 
