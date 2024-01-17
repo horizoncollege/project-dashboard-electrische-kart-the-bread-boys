@@ -102,4 +102,4 @@ GetSpecific(startTime: number, endTime: number) // it will fetch specific data
 
 ### Issues
 
-Front-end time filters does not get updated when a filter is set
+...
