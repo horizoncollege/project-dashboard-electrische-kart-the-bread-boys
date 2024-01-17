@@ -338,6 +338,7 @@ function App() {
       <div className='content-container'>
         <div className='sidebar'>
           <h2>Select your time and date:</h2>
+<<<<<<< Updated upstream
 
           <form onSubmit={handeTimeForum}>
             <label htmlFor="Date">Date: </label>
@@ -370,6 +371,19 @@ function App() {
             />
 
             <input type="submit" onClick={handeTimeForum} value="Reset" />
+=======
+          <form>
+            <label for="Date">Date: </label>
+            <input type="Date" id="Date" name="Date"></input>
+
+            <label for="start-time">Start time: </label>
+            <input id="start-time" type="time" name="start-time" step="2" />
+
+            <label for="end-time">End time: </label>
+            <input id="end-time" type="time" name="end-time" step="2" />
+
+            <button id='add'>reset</button>
+>>>>>>> Stashed changes
           </form>
         </div>
 
