@@ -92,10 +92,10 @@ export default class BackendConnection {
     }
 
     // Get all, but specific data based on time from api
-    public async GetSpecific(start_time: number, end_time: number) {
-        this.log.Info("Collecting all data from api");
+    public async GetSpecific(startTime: number, endTime: number) {
+        this.log.Info(`Collecting data between ${startTime} and ${endTime}`);
         // Format url
-        const response = await fetch(`http://${this.hostname}:${this.port}/SPECIFIC/${start_time}/${end_time}`);
+        const response = await fetch(`http://${this.hostname}:${this.port}/SPECIFIC/${startTime}/${endTime}`);
         // Convert it to json
         const data = await response.json();
         // Return the result
@@ -116,8 +116,18 @@ export default class BackendConnection {
             return null;
         }
 
-        const unixTimestamp = dateTime.getTime();
+        // Ensure the date and time are valid, considering leap years
+        if (
+            dateTime.getFullYear() < 1000 ||
+            isNaN(dateTime.getMilliseconds())
+        ) {
+            console.error('Invalid date or time');
+            return null;
+        }
+
+        const unixTimestamp = Math.floor(dateTime.getTime() / 1000); // Convert to seconds
 
         return unixTimestamp;
     }
+
 }
