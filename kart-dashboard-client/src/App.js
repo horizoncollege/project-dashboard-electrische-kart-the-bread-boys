@@ -377,7 +377,7 @@ function App() {
               onChange={(e) => setEndTime(e.target.value)}
             />
 
-            <input id='add' type="submit" onClick={handeTimeForum} value="Reset" />
+            <input id='Reset' type="submit" onClick={handeTimeForum} value="Reset" />
 
           </form>
         </div>
@@ -409,10 +409,20 @@ function App() {
             </div>
           </div>
 
-          <div className='volt-meter'>
-            <h2>Battery meter/Volt usage</h2>
-            <div className='linechartvolt'>
-              <LineChart chartData={voltData} config={volt} />
+          <div className='next-eachother'>
+            <div className='volt-meter'>
+              <h2>Battery meter/Volt usage</h2>
+              <div className='linechartvolt'>
+                <LineChart chartData={voltData} config={volt} />
+              </div>
+            </div>
+
+
+            <div className='maps'>
+              <h2>Map</h2>
+              <div className='street-maps'>
+
+              </div>
             </div>
           </div>
         </div>
