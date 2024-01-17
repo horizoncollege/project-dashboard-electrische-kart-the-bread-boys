@@ -302,7 +302,6 @@ function App() {
   useEffect(() => {
   }, [UserData, speedData, voltData, gyroData]);
 
-
   return (
     <div className="App">
       <nav>
