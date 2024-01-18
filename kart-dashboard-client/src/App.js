@@ -303,7 +303,7 @@ function App() {
   const coordinates = [
     // { lat: UserData[0].gps_lat, lng: UserData[0].gps_long },
     { lat: 50.990479843366955, lng: 5.257970172937099 },
-    { lat: 51.515, lng: -0.11 },
+    { lat: 50.99196159213541, lng: 5.260533919566851 },
   ];
 
   // Update the data variables when it got fetched
