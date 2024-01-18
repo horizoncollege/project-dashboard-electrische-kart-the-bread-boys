@@ -4,6 +4,8 @@ import BackendConnection from './backend/Backendconnection.ts';
 import Logger from './backend/logger.ts';
 import BarChart from './components/BarChart.js';
 import LineChart from './components/MultiLineChart.js';
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css"
 
 // Create a new logger for app
 const log = new Logger("App");
@@ -298,19 +300,15 @@ function App() {
     },
   };
 
+  const coordinates = [
+    // { lat: UserData[0].gps_lat, lng: UserData[0].gps_long },
+    { lat: 50.990479843366955, lng: 5.257970172937099 },
+    { lat: 51.515, lng: -0.11 },
+  ];
+
   // Update the data variables when it got fetched
   useEffect(() => {
   }, [UserData, speedData, voltData, gyroData]);
-
-  var map = L.map('map').setView([51.505, -0.09], 13);
-
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-  
-  L.marker([51.5, -0.09]).addTo(map)
-      .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-      .openPopup();
 
   return (
     <div className="App">
@@ -417,16 +415,29 @@ function App() {
               </div>
             </div>
 
-
             <div className='maps'>
               <h2>Map</h2>
               <div className='street-maps'>
+                <MapContainer
+                  center={[coordinates[0].lat, coordinates[0].lng]} // Use the first pair as the initial center
+                  zoom={13}
+                  style={{ height: "400px", width: "100%" }}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='© OpenStreetMap contributors'
+                  />
 
+                  {coordinates.map(({ lat, lng }, index) => (
+                    <Marker key={index} position={[lat, lng]}>
+                      <Popup>{`Latitude: ${lat}, Longitude: ${lng}`}</Popup>
+                    </Marker>
+                  ))}
+                </MapContainer>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
       <footer>
