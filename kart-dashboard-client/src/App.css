@@ -265,13 +265,14 @@ select {
 }
 
 .maps h2 {
+  margin-bottom: 1%;
   margin-left: 0.8%;
   font-size: calc(10px + 0.9vw);
 }
 
 .street-maps {
   width: calc(10px + 37vw);
-  height: calc(10px + 20vw);
+  height: calc(10px + 17vw);
 }
 
 @media screen and (max-width: 768px) {

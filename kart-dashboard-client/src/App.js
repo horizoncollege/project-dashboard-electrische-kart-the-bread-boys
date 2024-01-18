@@ -421,7 +421,7 @@ function App() {
                 <MapContainer
                   center={[coordinates[0].lat, coordinates[0].lng]} // Use the first pair as the initial center
                   zoom={13}
-                  style={{ height: "400px", width: "100%" }}
+                  style={{ height: "20vw", width: "101%", borderRadius: "1vw" }}
                 >
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
