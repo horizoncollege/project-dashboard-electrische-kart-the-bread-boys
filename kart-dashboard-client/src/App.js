@@ -122,7 +122,7 @@ function App() {
         console.log('Received Data:', receivedData);
         setUserData(receivedData);
 
-        // Define all the data of the charts
+        // Defines all the data of the charts
         const speedChartData = {
           labels: receivedData.map((data) => timeConverter(data.time)),
           datasets: [
@@ -227,7 +227,11 @@ function App() {
         }
       },
       responsive: true,
+
+      //to let us change hight and width induvidually
       maintainAspectRatio: false,
+
+      //names arround the chart
       scales: {
         y: {
           type: 'linear',
@@ -338,6 +342,8 @@ function App() {
       <div className='content-container'>
         <div className='sidebar'>
           <h2>Select your time and date:</h2>
+
+          {/* onSubmit for the reset button */}
           <form onSubmit={handeTimeForum}>
             <label htmlFor="Date">Date: </label>
             <input
@@ -374,11 +380,11 @@ function App() {
         </div>
 
         <div className='blocks'>
-
           <div className='next-eachother'>
             <div className='km-h'>
               <h2>Speed</h2>
               <div className='barchartspeed'>
+                {/* adds a barchart with the specified data and settings */}
                 <BarChart chartData={speedData} config={speed} />
               </div>
             </div>
