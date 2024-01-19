@@ -31,8 +31,8 @@ CREATE INDEX idx_data_ID ON `sensor_data` (`data_ID`);
 
 CREATE TABLE gps_data(
   `data_ID` int(11) NOT NULL,
-  `gps_lat` decimal NOT NULL,
-  `gps_long` decimal NOT NULL,
+  `gps_lat` DOUBLE NOT NULL,
+  `gps_long` DOUBLE NOT NULL,
   PRIMARY KEY (`data_ID`),
   FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`)
 );
@@ -40,9 +40,9 @@ CREATE TABLE gps_data(
 
 CREATE TABLE acceleration_data (
   `data_ID` int(11) NOT NULL,
-  `acc_x` FLOAT NOT NULL,
-  `acc_y` FLOAT NOT NULL,
-`acc_z` FLOAT NOT NULL,
+  `acc_x` DOUBLE NOT NULL,
+  `acc_y` DOUBLE NOT NULL,
+  `acc_z` DOUBLE NOT NULL,
   PRIMARY KEY (`data_ID`),
   FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`)
 );
@@ -50,9 +50,9 @@ CREATE TABLE acceleration_data (
 -- Table for gyroscope data
 CREATE TABLE gyroscope_data (
   `data_ID` int(11) NOT NULL,
-  `gyro_x` decimal NOT NULL,
-  `gyro_y` decimal NOT NULL,
-  `gyro_z` decimal NOT NULL,
+  `gyro_x` DOUBLE NOT NULL,
+  `gyro_y` DOUBLE NOT NULL,
+  `gyro_z` DOUBLE NOT NULL,
   PRIMARY KEY (`data_ID`),
   FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`)
 );
@@ -60,7 +60,7 @@ CREATE TABLE gyroscope_data (
 -- Table for voltage data (assuming one voltage reading per sensor data entry)
 CREATE TABLE voltage_data (
   `data_ID` int(11) NOT NULL,
-  `voltage` decimal NOT NULL,
+  `voltage` DOUBLE NOT NULL,
   PRIMARY KEY (`data_ID`),
   FOREIGN KEY (`data_ID`) REFERENCES `sensor_data` (`data_ID`)
 );
@@ -96,29 +96,29 @@ INSERT INTO `sensor_data` (`data_ID`, `date`, `time`) VALUES
 
 -- Corrected data insertion for `gps_data` table
 INSERT INTO `gps_data` (`data_ID`, `gps_lat`, `gps_long`) VALUES
-(1, 1, 1),
-(2, 1, 1),
-(3, 1, 1),
-(4, 1, 1),
-(5, 1, 1),
-(6, 1, 1),
-(7, 1, 1),
-(8, 1, 1),
-(9, 1, 1),
-(10, 1, 1),
-(11, 1, 1),
-(12, 1, 1),
-(13, 1, 1),
-(14, 1, 1),
-(15, 1, 1),
-(16, 1, 1),
-(17, 1, 1),
-(18, 1, 1),
-(19, 1, 1),
-(20, 1, 1),
-(21, 1, 1),
-(22, 1, 1),
-(23, 1, 1);
+(1, 1.0, 1.0),
+(2, 1.0, 1.0),
+(3, 1.0, 1.0),
+(4, 1.0, 1.0),
+(5, 1.0, 1.0),
+(6, 1.0, 1.0),
+(7, 1.0, 1.0),
+(8, 1.0, 1.0),
+(9, 1.0, 1.0),
+(10, 1.0, 1.0),
+(11, 1.0, 1.0),
+(12, 1.0, 1.0),
+(13, 1.0, 1.0),
+(14, 1.0, 1.0),
+(15, 1.0, 1.0),
+(16, 1.0, 1.0),
+(17, 1.0, 1.0),
+(18, 1.0, 1.0),
+(19, 1.0, 1.0),
+(20, 1.0, 1.0),
+(21, 1.0, 1.0),
+(22, 1.0, 1.0),
+(23, 1.0, 1.0);
 
 -- Corrected data insertion for `acceleration_data` table
 INSERT INTO `acceleration_data` (`data_ID`, `acc_x`, `acc_y`, `acc_z`)
@@ -161,7 +161,7 @@ VALUES
 (7, -114.54198473282443, 59.458015267175576, 213.63358778625954),
 (8, -4.595419847328245, 10.061068702290076, 205.793893129771),
 (9, -5.0534351145038165, 10.045801526717558, 211.33587786259542),
-(10, 19923664122137406, 9.908396946564885, 215.6793893129771),
+(10, 19.4323664122137406, 9.908396946564885, 215.6793893129771),
 (11, -52.47328244274809, -146.33587786259542, 189.72519083969465),
 (12, -20.251908396946565, 9.259541984732824, 209.1145038167939),
 (13, 9.885496183206106, 22.938931297709924, 209.14503816793894),
@@ -193,7 +193,7 @@ VALUES
 (11, 22.7),
 (12, 22.5),
 (13, 22.3),
-(14, 221),
+(14, 22.1),
 (15, 22),
 (16, 21.9),
 (17, 21.6),
@@ -201,7 +201,7 @@ VALUES
 (19, 21.4),
 (20, 21.3),
 (21, 21.2),
-(22, 211),
+(22, 21.1),
 (23, 21);
 
 

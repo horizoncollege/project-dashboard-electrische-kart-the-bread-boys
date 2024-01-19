@@ -36,12 +36,8 @@ nav {
   width: 37%;
   margin-right: 35%;
   margin-left: 40%;
-  font-size: 1vw;
+  font-size: calc(10px + 0.5vw);
 }
-
-/* .titlebreb, h1{
-  font-size: xx-large;
-} */
 
 .breblogoc {
   width: 3%;
@@ -50,7 +46,8 @@ nav {
 /* sidebar  */
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
-  width: 15vw;
+  width: calc(50px + 12vw);
+  height: calc(5px + 67vw);
   margin-top: 1%;
   margin-left: 1%;
   margin-bottom: 1%;
@@ -60,49 +57,37 @@ nav {
 }
 
 .sidebar h2 {
-  font-size: 1.5vw;
-  margin-bottom: 18%;
+  font-size: calc(10px + 0.9vw);
+  margin-left: 0.8%;
+  margin-bottom: 9%;
 }
 
-.sidebar p {
-  font-size: 1vw;
-  margin-top: 2%;
-}
-
-#date {
-  margin-top: 7%;
-}
+/* #date {
+  margin-top: 1%;
+} */
 
 select {
-  font-size: 1vw;
-  width: 13vw;
-  height: 2.5vw;
+  font-size: calc(8px + 0.6vw);
+  width: calc(50px + 10vw);
+  height: calc(10px + 2vw);
   border-radius: 0.5vw;
   background-color: rgba(65, 93, 135, 1);
   color: #ffffff;
+  margin-left: 0.8%;
   margin-top: 7%;
   filter: drop-shadow(0.1vw 0.1vw 0vw black);
 }
 
 #add {
-  font-size: 1vw;
-  width: 13vw;
-  height: 2.5vw;
+  font-size: calc(8px + 0.6vw);
+  width: calc(50px + 10vw);
+  height: calc(10px + 2vw);
   border-radius: 0.5vw;
   background-color: rgba(65, 93, 135, 1);
   color: #ffffff;
   margin-top: 7%;
+  margin-left: 0.8%;
 
-}
-
-#delete-all {
-  font-size: 1vw;
-  width: 13vw;
-  height: 2.5vw;
-  border-radius: 0.5vw;
-  background-color: rgba(218, 77, 77, 1);
-  color: #ffffff;
-  margin-top: 100%;
 }
 
 .next-eachother {
@@ -114,7 +99,7 @@ select {
 .km-h {
   background-color: rgba(34, 62, 104, 1);
   height: 25vw;
-  width: 41vw;
+  width: calc(10px + 40vw);
   margin-top: 1%;
   margin-left: 1%;
   padding: 1%;
@@ -122,19 +107,45 @@ select {
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
+@media screen and (min-width: 767px) {
+  .km-h {
+    width: calc(10px + 38vw);
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .km-h {
+    width: calc(10px + 38.5vw);
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .km-h {
+    width: calc(10px + 40vw);
+  }
+}
+
 .km-h h2 {
-  font-size: 1.5vw;
+  margin-left: 0.8%;
+  font-size: calc(10px + 0.9vw);
 }
 
 .barchartspeed {
-  width: 39vw;
+  width: calc(10px + 37vw);
+  height: calc(10px + 20vw);
+}
+
+@media screen and (max-width: 768px) {
+  .barchartspeed {
+    width: calc(10px + 35vw);
+  }
 }
 
 /* gyro */
 .gyro {
   background-color: rgba(34, 62, 104, 1);
   height: 25vw;
-  width: 41vw;
+  width: calc(10px + 40vw);
   margin-top: 1%;
   margin-left: 1%;
   padding: 1%;
@@ -142,15 +153,45 @@ select {
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
+@media screen and (min-width: 767px) {
+  .gyro {
+    width: calc(10px + 38vw);
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .gyro {
+    width: calc(10px + 38.5vw);
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .gyro {
+    width: calc(10px + 40vw);
+  }
+}
+
 .gyro h2 {
-  font-size: 1.5vw;
+  margin-left: 0.8%;
+  font-size: calc(10px + 0.9vw);
+}
+
+.gyroChart {
+  width: calc(10px + 37vw);
+  height: calc(10px + 20vw);
+}
+
+@media screen and (max-width: 768px) {
+  .gyroChart {
+    width: calc(10px + 35vw);
+  }
 }
 
 /* volt meter */
 .volt-meter {
   background-color: rgba(34, 62, 104, 1);
-  height: 44vw;
-  width: 81vw;
+  height: 42vw;
+  width: calc(1px + 75vw);
   margin-top: 1%;
   margin-left: 1%;
   margin-bottom: 1%;
@@ -159,12 +200,51 @@ select {
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
+@media screen and (min-width: 767px) {
+  .volt-meter {
+    width: calc(10px + 77vw);
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .volt-meter {
+    width: calc(10px + 79vw);
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .volt-meter {
+    width: calc(10px + 80vw);
+  }
+}
+
 .volt-meter h2 {
-  font-size: 1.5vw;
+  margin-left: 0.8%;
+  font-size: calc(10px + 0.9vw);
 }
 
 .linechartvolt {
-  width: 76vw;
+  margin-left: 1%;
+  width: calc(10px + 77vw);
+  height: calc(10px + 36vw);
+}
+
+@media screen and (min-width: 767px) {
+  .linechartvolt {
+    width: calc(10px + 74vw);
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .linechartvolt {
+    width: calc(10px + 76vw);
+  }
+}
+
+@media screen and (min-width: 1439px) {
+  .linechartvolt {
+    width: calc(10px + 77vw);
+  }
 }
 
 /* footer */
@@ -184,4 +264,22 @@ footer {
   background-color: #223e68;
   padding: 1%;
   filter: drop-shadow(0.1vw -0.1vw 0.1vw black);
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+#Date,
+#start-time,
+#end-time {
+  background-color: #5372a1;
+  color: #ffffff;
+  font-size: 1vw;
+  width: calc(50px + 10vw);
+  height: calc(10px + 1.5vw);
+  border-radius: 0.5vw;
+  
 }
