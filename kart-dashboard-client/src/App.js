@@ -6,6 +6,8 @@ import BarChart from './components/BarChart.js';
 import LineChart from './components/MultiLineChart.js';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
+import L from 'leaflet'; // Zorg ervoor dat je de leaflet library hebt geïnstalleerd.
+
 
 // Create a new logger for app
 const log = new Logger("App");
@@ -320,6 +322,13 @@ function App() {
   useEffect(() => {
   }, [UserData, speedData, voltData, gyroData]);
 
+  const customIcon = new L.Icon({
+    iconUrl: '/marker.png',
+    iconSize: [22, 32], // Pas de grootte van het icoon aan zoals nodig
+    iconAnchor: [16, 32], // Pas de ankerpositie aan indien nodig
+    popupAnchor: [0, -32], // Pas de positie van het popupvenster aan indien nodig
+  });
+
   return (
     <div className="App">
       <nav>
@@ -429,8 +438,8 @@ function App() {
               <h2>Map</h2>
               <div className='street-maps'>
                 <MapContainer
-                  center={coordinates.length > 0 ? [coordinates[0].lat, coordinates[0].lng] : [0, 0]}
-                  zoom={13}
+                  center={coordinates.length > 0 ? [coordinates[0].lat, coordinates[0].lng] : [50.99050755452861, 5.257983313820398]}
+                  zoom={14}
                   style={{ height: "20vw", width: "101%", borderRadius: "1vw" }}
                 >
                   <TileLayer
@@ -439,7 +448,11 @@ function App() {
                   />
 
                   {coordinates.map(({ lat, lng }, index) => (
-                    <Marker key={index} position={[lat, lng]}>
+                    <Marker
+                      key={index}
+                      position={[lat, lng]}
+                      icon={customIcon} // Gebruik het aangepaste icoon voor deze marker
+                    >
                       <Popup>{`Latitude: ${lat}, Longitude: ${lng}`}</Popup>
                     </Marker>
                   ))}
