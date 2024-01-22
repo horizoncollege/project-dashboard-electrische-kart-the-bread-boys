@@ -25,7 +25,7 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: #223E68;
-  padding: 1.5%;
+  padding: 1%;
   filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
@@ -47,7 +47,7 @@ nav {
 .sidebar {
   background-color: rgba(34, 62, 104, 1);
   width: calc(50px + 12vw);
-  height: calc(5px + 67vw);
+  height: calc(5px + 50vw);
   margin-top: 1%;
   margin-left: 1%;
   margin-bottom: 1%;
@@ -78,14 +78,14 @@ select {
   filter: drop-shadow(0.1vw 0.1vw 0vw black);
 }
 
-#add {
+#Reset {
   font-size: calc(8px + 0.6vw);
   width: calc(50px + 10vw);
   height: calc(10px + 2vw);
   border-radius: 0.5vw;
   background-color: rgba(65, 93, 135, 1);
   color: #ffffff;
-  margin-top: 7%;
+  margin-top: 13%;
   margin-left: 0.8%;
 
 }
@@ -190,8 +190,8 @@ select {
 /* volt meter */
 .volt-meter {
   background-color: rgba(34, 62, 104, 1);
-  height: 42vw;
-  width: calc(1px + 75vw);
+  height: 25vw;
+  width: calc(10px + 40vw);
   margin-top: 1%;
   margin-left: 1%;
   margin-bottom: 1%;
@@ -202,19 +202,19 @@ select {
 
 @media screen and (min-width: 767px) {
   .volt-meter {
-    width: calc(10px + 77vw);
+    width: calc(10px + 38vw);
   }
 }
 
 @media screen and (min-width: 1023px) {
   .volt-meter {
-    width: calc(10px + 79vw);
+    width: calc(10px + 38.5vw);
   }
 }
 
 @media screen and (min-width: 1439px) {
   .volt-meter {
-    width: calc(10px + 80vw);
+    width: calc(10px + 40vw);
   }
 }
 
@@ -224,26 +224,59 @@ select {
 }
 
 .linechartvolt {
+  width: calc(10px + 37vw);
+  height: calc(10px + 20vw);
+}
+
+@media screen and (max-width: 768px) {
+  .linechartvolt {
+    width: calc(10px + 35vw);
+  }
+}
+
+/* maps */
+.maps {
+  background-color: rgba(34, 62, 104, 1);
+  height: 25vw;
+  width: calc(10px + 40vw);
+  margin-top: 1%;
   margin-left: 1%;
-  width: calc(10px + 77vw);
-  height: calc(10px + 36vw);
+  padding: 1%;
+  border-radius: 1vw;
+  filter: drop-shadow(0.1vw 0.1vw 0.1vw black);
 }
 
 @media screen and (min-width: 767px) {
-  .linechartvolt {
-    width: calc(10px + 74vw);
+  .maps {
+    width: calc(10px + 38vw);
   }
 }
 
 @media screen and (min-width: 1023px) {
-  .linechartvolt {
-    width: calc(10px + 76vw);
+  .maps {
+    width: calc(10px + 38.5vw);
   }
 }
 
 @media screen and (min-width: 1439px) {
-  .linechartvolt {
-    width: calc(10px + 77vw);
+  .maps {
+    width: calc(10px + 40vw);
+  }
+}
+
+.maps h2 {
+  margin-left: 0.8%;
+  font-size: calc(10px + 0.9vw);
+}
+
+.street-maps {
+  width: calc(10px + 37vw);
+  height: calc(10px + 20vw);
+}
+
+@media screen and (max-width: 768px) {
+  .street-maps {
+    width: calc(10px + 35vw);
   }
 }
 
@@ -281,5 +314,5 @@ label {
   width: calc(50px + 10vw);
   height: calc(10px + 1.5vw);
   border-radius: 0.5vw;
-  
+
 }

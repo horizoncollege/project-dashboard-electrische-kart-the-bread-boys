@@ -122,7 +122,7 @@ function App() {
         console.log('Received Data:', receivedData);
         setUserData(receivedData);
 
-        // Define all the data of the charts
+        // Defines all the data of the charts
         const speedChartData = {
           labels: receivedData.map((data) => timeConverter(data.time)),
           datasets: [
@@ -227,7 +227,11 @@ function App() {
         }
       },
       responsive: true,
+
+      //to let us change hight and width induvidually
       maintainAspectRatio: false,
+
+      //names arround the chart
       scales: {
         y: {
           type: 'linear',
@@ -338,6 +342,8 @@ function App() {
       <div className='content-container'>
         <div className='sidebar'>
           <h2>Select your time and date:</h2>
+
+          {/* onSubmit for the reset button */}
           <form onSubmit={handeTimeForum}>
             <label htmlFor="Date">Date: </label>
             <input
@@ -368,13 +374,12 @@ function App() {
               onChange={(e) => setEndTime(e.target.value)}
             />
 
-            <input id='add' type="submit" onClick={handeTimeForum} value="Reset" />
+            <input id='Reset' type="submit" onClick={handeTimeForum} value="Reset" />
 
           </form>
         </div>
 
         <div className='blocks'>
-
           <div className='next-eachother'>
             <div className='km-h'>
               <h2>Speed</h2>
@@ -400,10 +405,20 @@ function App() {
             </div>
           </div>
 
-          <div className='volt-meter'>
-            <h2>Battery meter/Volt usage</h2>
-            <div className='linechartvolt'>
-              <LineChart chartData={voltData} config={volt} />
+          <div className='next-eachother'>
+            <div className='volt-meter'>
+              <h2>Battery meter/Volt usage</h2>
+              <div className='linechartvolt'>
+                <LineChart chartData={voltData} config={volt} />
+              </div>
+            </div>
+
+
+            <div className='maps'>
+              <h2>Map</h2>
+              <div className='street-maps'>
+
+              </div>
             </div>
           </div>
         </div>
