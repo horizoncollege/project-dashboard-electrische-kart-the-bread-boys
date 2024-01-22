@@ -310,6 +310,7 @@ function App() {
         const newCoordinates = UserData.map((data) => ({
           lat: data.gps_lat,
           lng: data.gps_long,
+          time: data.time,
         }));
         setCoordinates(newCoordinates);
       }
@@ -453,7 +454,7 @@ function App() {
                       position={[lat, lng]}
                       icon={customIcon} // Gebruik het aangepaste icoon voor deze marker
                     >
-                      <Popup>{`Latitude: ${lat}, Longitude: ${lng}`}</Popup>
+                      <Popup>{`Latitude: ${lat}, Longitude: ${lng}, Time: ${timeConverter(time)}`}</Popup>
                     </Marker>
                   ))}
                 </MapContainer>
