@@ -100,12 +100,19 @@ impl DatabaseConnection {
         // Query to select all the data
         let result: Vec<AllData> = conn.query_map(
             "
+            SELECT *
+            FROM (
             SELECT sensor_data.data_ID, time, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, voltage
             FROM sensor_data 
             INNER JOIN voltage_data ON sensor_data.data_ID = voltage_data.data_ID 
             INNER JOIN gyroscope_data ON sensor_data.data_ID = gyroscope_data.data_ID 
             INNER JOIN acceleration_data ON sensor_data.data_ID = acceleration_data.data_ID 
-            INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID",
+            INNER JOIN gps_data ON sensor_data.data_ID = gps_data.data_ID
+            ORDER BY time DESC
+            LIMIT 50
+            ) AS subquery
+            ORDER BY time ASC;
+            ",
             // Format all the data into the structs
             |(data_id, time, gps_lat, gps_long, acc_x, acc_y, acc_z, gyro_x, gyro_y, gyro_z, voltage)| {
                 AllData {
@@ -223,7 +230,7 @@ impl DatabaseConnection {
             },
         )?;
 
-         // return the data as the struct format
+        // return the data as the struct format
         self.log.info("Query executed successfully");
         Ok(result)
     }
@@ -247,7 +254,7 @@ impl DatabaseConnection {
             },
         )?;
 
-         // return the data as the struct format
+        // return the data as the struct format
         self.log.info("Query executed successfully");
         Ok(result)
     }
@@ -271,7 +278,7 @@ impl DatabaseConnection {
             },
         )?;
 
-         // return the data as the struct format
+        // return the data as the struct format
         self.log.info("Query executed successfully");
         Ok(result)
     }
