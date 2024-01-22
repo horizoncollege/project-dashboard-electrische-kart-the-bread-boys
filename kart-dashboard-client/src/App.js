@@ -300,11 +300,21 @@ function App() {
     },
   };
 
-  const coordinates = [
-    // { lat: UserData[0].gps_lat, lng: UserData[0].gps_long },
-    { lat: 50.990479843366955, lng: 5.257970172937099 },
-    { lat: 50.99196159213541, lng: 5.260533919566851 },
-  ];
+  const [coordinates, setCoordinates] = useState([]);
+
+  React.useEffect(() => {
+    const fetchCoordinates = () => {
+      if (UserData.length > 0) {
+        const newCoordinates = UserData.map((data) => ({
+          lat: data.gps_lat,
+          lng: data.gps_long,
+        }));
+        setCoordinates(newCoordinates);
+      }
+    };
+
+    fetchCoordinates();
+  }, [UserData]);
 
   // Update the data variables when it got fetched
   useEffect(() => {
@@ -419,7 +429,7 @@ function App() {
               <h2>Map</h2>
               <div className='street-maps'>
                 <MapContainer
-                  center={[coordinates[0].lat, coordinates[0].lng]} // Use the first pair as the initial center
+                  center={coordinates.length > 0 ? [coordinates[0].lat, coordinates[0].lng] : [0, 0]}
                   zoom={13}
                   style={{ height: "20vw", width: "101%", borderRadius: "1vw" }}
                 >
