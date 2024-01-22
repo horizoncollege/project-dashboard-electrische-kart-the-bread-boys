@@ -448,7 +448,7 @@ function App() {
                     attribution='© OpenStreetMap contributors'
                   />
 
-                  {coordinates.map(({ lat, lng }, index) => (
+                  {coordinates.map(({ lat, lng, time }, index) => (
                     <Marker
                       key={index}
                       position={[lat, lng]}
