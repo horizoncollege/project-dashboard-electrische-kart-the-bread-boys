@@ -379,7 +379,7 @@ function App() {
             <div className='km-h'>
               <h2>Speed</h2>
               <div className='barchartspeed'>
-                <BarChart chartData={speedData} config={speed} />
+                <LineChart chartData={speedData} config={speed} />
               </div>
             </div>
 
