@@ -18,7 +18,7 @@ log.Info("Front-end started");
 const bc = new BackendConnection();
 
 //variable to compare voltage use
-let compare = 25;
+let compare = 0;
 
 
 // Convert unix time to normal time
@@ -40,7 +40,7 @@ function voltUsage(volt) {
   let usage = compare - volt;
   if (usage < 0) {
     compare = volt
-    return 25 - volt;
+    return 0;
   } else {
     compare = volt;
     return usage
@@ -126,7 +126,7 @@ function App() {
         console.log('Received Data:', receivedData);
         setUserData(receivedData);
 
-        // Define all the data of the charts
+        // Defines all the data of the charts
         const speedChartData = {
           labels: receivedData.map((data) => timeConverter(data.time)),
           datasets: [
@@ -231,7 +231,11 @@ function App() {
         }
       },
       responsive: true,
+
+      //to let us change hight and width induvidually
       maintainAspectRatio: false,
+
+      //names arround the chart
       scales: {
         y: {
           type: 'linear',
@@ -365,6 +369,8 @@ function App() {
       <div className='content-container'>
         <div className='sidebar'>
           <h2>Select your time and date:</h2>
+
+          {/* onSubmit for the reset button */}
           <form onSubmit={handeTimeForum}>
             <label htmlFor="Date">Date: </label>
             <input
@@ -401,7 +407,6 @@ function App() {
         </div>
 
         <div className='blocks'>
-
           <div className='next-eachother'>
             <div className='km-h'>
               <h2>Speed</h2>
