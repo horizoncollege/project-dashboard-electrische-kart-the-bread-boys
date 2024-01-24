@@ -126,24 +126,17 @@ function App() {
         console.log('Received Data:', receivedData);
         setUserData(receivedData);
 
+        const newCoordinates = receivedData.map((data) => ({
+          lat: data.gps_lat,
+          lng: data.gps_long,
+          time: data.time,
+        }));
+        setCoordinates(newCoordinates);
+
         // Defines all the data of the charts
         const speedChartData = {
           labels: receivedData.map((data) => timeConverter(data.time)),
           datasets: [
-            {
-              label: "Top speed",
-              data: receivedData.map((data) => data.gyro_x),
-              backgroundColor: ["rgba(0, 194, 255, 1)"],
-              borderColor: "black",
-              borderWidth: 2,
-            },
-            {
-              label: "Average speed",
-              data: receivedData.map((data) => data.gyro_y),
-              backgroundColor: ["rgba(255, 184, 0, 1)"],
-              borderColor: "black",
-              borderWidth: 2,
-            },
             {
               label: "Speed",
               data: receivedData.map((data) => data.gyro_z),
@@ -308,20 +301,20 @@ function App() {
 
   const [coordinates, setCoordinates] = useState([]);
 
-  React.useEffect(() => {
-    const fetchCoordinates = () => {
-      if (UserData.length > 0) {
-        const newCoordinates = UserData.map((data) => ({
-          lat: data.gps_lat,
-          lng: data.gps_long,
-          time: data.time,
-        }));
-        setCoordinates(newCoordinates);
-      }
-    };
+  // React.useEffect(() => {
+  //   const fetchCoordinates = () => {
+  //     if (UserData.length > 0) {
+  //       const newCoordinates = UserData.map((data) => ({
+  //         lat: data.gps_lat,
+  //         lng: data.gps_long,
+  //         time: data.time,
+  //       }));
+  //       setCoordinates(newCoordinates);
+  //     }
+   // };
 
-    fetchCoordinates();
-  }, [UserData]);
+  //   fetchCoordinates();
+  // }, [UserData]);
 
   // Update the data variables when it got fetched
   useEffect(() => {
@@ -434,7 +427,7 @@ function App() {
 
           <div className='next-eachother'>
             <div className='volt-meter'>
-              <h2>Battery meter/Volt usage</h2>
+              <h2>Battery meter/Volt usage (sensor error)</h2>
               <div className='linechartvolt'>
                 <LineChart chartData={voltData} config={volt} />
               </div>
