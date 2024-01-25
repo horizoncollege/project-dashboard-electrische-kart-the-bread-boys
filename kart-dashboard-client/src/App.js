@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import BackendConnection from './backend/Backendconnection.ts';
 import Logger from './backend/logger.ts';
-import BarChart from './components/BarChart.js';
 import LineChart from './components/MultiLineChart.js';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"
