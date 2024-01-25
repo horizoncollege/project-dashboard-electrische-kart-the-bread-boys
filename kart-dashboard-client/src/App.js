@@ -4,6 +4,10 @@ import BackendConnection from './backend/Backendconnection.ts';
 import Logger from './backend/logger.ts';
 import BarChart from './components/BarChart.js';
 import LineChart from './components/MultiLineChart.js';
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css"
+import L from 'leaflet'; // Zorg ervoor dat je de leaflet library hebt geïnstalleerd.
+
 
 // Create a new logger for app
 const log = new Logger("App");
@@ -122,24 +126,17 @@ function App() {
         console.log('Received Data:', receivedData);
         setUserData(receivedData);
 
+        const newCoordinates = receivedData.map((data) => ({
+          lat: data.gps_lat,
+          lng: data.gps_long,
+          time: data.time,
+        }));
+        setCoordinates(newCoordinates);
+
         // Defines all the data of the charts
         const speedChartData = {
           labels: receivedData.map((data) => timeConverter(data.time)),
           datasets: [
-            {
-              label: "Top speed",
-              data: receivedData.map((data) => data.gyro_x),
-              backgroundColor: ["rgba(0, 194, 255, 1)"],
-              borderColor: "black",
-              borderWidth: 2,
-            },
-            {
-              label: "Average speed",
-              data: receivedData.map((data) => data.gyro_y),
-              backgroundColor: ["rgba(255, 184, 0, 1)"],
-              borderColor: "black",
-              borderWidth: 2,
-            },
             {
               label: "Speed",
               data: receivedData.map((data) => data.gyro_z),
@@ -302,10 +299,33 @@ function App() {
     },
   };
 
+  const [coordinates, setCoordinates] = useState([]);
+
+  // React.useEffect(() => {
+  //   const fetchCoordinates = () => {
+  //     if (UserData.length > 0) {
+  //       const newCoordinates = UserData.map((data) => ({
+  //         lat: data.gps_lat,
+  //         lng: data.gps_long,
+  //         time: data.time,
+  //       }));
+  //       setCoordinates(newCoordinates);
+  //     }
+   // };
+
+  //   fetchCoordinates();
+  // }, [UserData]);
+
   // Update the data variables when it got fetched
   useEffect(() => {
   }, [UserData, speedData, voltData, gyroData]);
 
+  const customIcon = new L.Icon({
+    iconUrl: '/marker.png',
+    iconSize: [22, 32], // Pas de grootte van het icoon aan zoals nodig
+    iconAnchor: [16, 32], // Pas de ankerpositie aan indien nodig
+    popupAnchor: [0, -32], // Pas de positie van het popupvenster aan indien nodig
+  });
 
   return (
     <div className="App">
@@ -407,22 +427,39 @@ function App() {
 
           <div className='next-eachother'>
             <div className='volt-meter'>
-              <h2>Battery meter/Volt usage</h2>
+              <h2>Battery meter/Volt usage (sensor error)</h2>
               <div className='linechartvolt'>
                 <LineChart chartData={voltData} config={volt} />
               </div>
             </div>
 
-
             <div className='maps'>
               <h2>Map</h2>
               <div className='street-maps'>
+                <MapContainer
+                  center={coordinates.length > 0 ? [coordinates[0].lat, coordinates[0].lng] : [50.99050755452861, 5.257983313820398]}
+                  zoom={14}
+                  style={{ height: "20vw", width: "101%", borderRadius: "1vw" }}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='© OpenStreetMap contributors'
+                  />
 
+                  {coordinates.map(({ lat, lng, time }, index) => (
+                    <Marker
+                      key={index}
+                      position={[lat, lng]}
+                      icon={customIcon} // Gebruik het aangepaste icoon voor deze marker
+                    >
+                      <Popup>{`Latitude: ${lat}, Longitude: ${lng}, Time: ${timeConverter(time)}`}</Popup>
+                    </Marker>
+                  ))}
+                </MapContainer>
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
       <footer>
