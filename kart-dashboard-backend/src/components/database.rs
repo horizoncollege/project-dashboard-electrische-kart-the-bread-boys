@@ -71,13 +71,13 @@ impl DatabaseConnection {
             env::var("SQL_USERNAME").expect("Expected a SQL_USERNAME in the environment");
         let password =
             env::var("SQL_PASSWORD").expect("Expected a SQL_PASSWORD in the environment");
-        let hostname = env::var("HOSTNAME").expect("Expected a HOSTNAME in the environment");
+        let hostname = env::var("SQL_HOSTNAME").expect("Expected a SQL_HOSTNAME in the environment");
         let sql_port = 3306;
-
+        
         let opts = Opts::from_url(&format!(
             "mysql://{}:{}@{}:{}/{}",
             username, password, hostname, sql_port, database_name
-        ))?;
+        ))?;        
         let log = Logger::new("DatabaseConnection");
         let pool = Pool::new(opts)?;
         let conn = pool.get_conn()?;
