@@ -14,5 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build backend
+      run: docker build kart-dashboard-backend --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build frontend
+      run: docker build kart-dashboard-client --file Dockerfile --tag my-image-name:$(date +%s)
+
