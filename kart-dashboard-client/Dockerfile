@@ -1,4 +1,4 @@
-FROM node:alpine as build
+FROM node:latest as build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 
 RUN npm run build
 
-FROM nginx:bookworm
+FROM nginx:latest
 
 COPY --from=build /app/build /usr/share/nginx/html
 
